@@ -6,7 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "push": "git subtree push --prefix dist origin master"
+    "push": "git push origin :master && git subtree push --prefix dist origin master"
   },
   "dependencies": {
     "vue": "^2.5.16",
