@@ -1,7 +1,7 @@
 <template>
     <header>
         <nav>
-            <span></span>
+            <router-link to="/" class="logo"></router-link>
             <ul>
                 <li>
                     <a href="#">About Me</a>
@@ -33,7 +33,7 @@
             padding: 15px;
             color: $white;
 
-            span {
+            .logo {
                 display: inline-block;
                 float: left;
                 width: 0; 
