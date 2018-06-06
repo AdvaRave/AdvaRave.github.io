@@ -6,7 +6,7 @@
 
 <script>
     export default {
-        name: 'redis'
+        name: 'marketing'
     };
 </script>
 
