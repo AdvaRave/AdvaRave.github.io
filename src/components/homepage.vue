@@ -81,7 +81,7 @@
         }
 
         ul {
-            padding: 35px 0;
+            padding: 40px 0;
         }
     }
 
@@ -131,10 +131,14 @@
             text-align: left;
 
             li {
-                margin: 20px 20%;
+                margin: 0 20% 40px 20%;
                 padding: 40px;
                 background: $main-light;
                 position: relative;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
 
                 .logo {
                     display: inline-block;
@@ -197,7 +201,7 @@
                 text-align: center !important;
 
                 li {
-                    padding: 10px !important;
+                    padding: 20px 10px !important;
 
                     .project-image {
                         display: none !important;
