@@ -21,7 +21,7 @@
                         Redis Description Redis Description Redis Description<br>
                         Redis Description
                     </p>
-                    <router-link to="/redis">Read More</router-link>
+                    <router-link to="/redis" class="button">Read More</router-link>
                     <div class="project-image"></div>
                 </li>
                 <li>
@@ -30,7 +30,7 @@
                         Redis Description Redis Description Redis Description<br>
                         Redis Description
                     </p>
-                    <router-link to="/creojam">Read More</router-link>
+                    <router-link to="/creojam" class="button">Read More</router-link>
                     <div class="project-image"></div>
                 </li>
             </ul>
@@ -57,6 +57,14 @@
                     </router-link>
                 </li>
             </ul>
+        </section>
+        <section class="contact" id="contact">
+            <h2>Contact Me</h2>
+            <p>
+                Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum 
+                Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum 
+                Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum 
+            </p>
         </section>
     </div>
 </template>
@@ -133,8 +141,9 @@
             li {
                 margin: 0 20% 40px 20%;
                 padding: 40px;
-                background: $main-light;
+                background: linear-gradient(to right, $main-light, $white);
                 position: relative;
+                border-radius: 20px;
 
                 &:last-child {
                     margin-bottom: 0;
@@ -149,13 +158,6 @@
 
                 p {
                     padding: 10px 0;
-                }
-
-                a {
-                    border: 1px solid $main-color;
-                    display: inline-block;
-                    padding: 5px 10px;
-                    border-radius: 15px;
                 }
 
                 .project-image {
@@ -195,6 +197,12 @@
         }
     }
 
+    .contact {
+        p {
+            padding: 50px 20%;
+        }
+    }
+
     @media only screen and (max-width: 1024px) {
         .projects {
             ul {
@@ -202,6 +210,7 @@
 
                 li {
                     padding: 20px 10px !important;
+                    background: $main-light !important;
 
                     .project-image {
                         display: none !important;

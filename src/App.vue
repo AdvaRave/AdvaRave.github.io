@@ -13,7 +13,7 @@
     export default {
         name: 'app',
         components: {
-            siteHeader
+            'site-header': siteHeader
         }
     };
 </script>
@@ -23,6 +23,7 @@
 
     body {
         font-family: 'Nunito', sans-serif;
+        font-size: 16px;
     }
 
     * {    
@@ -37,5 +38,16 @@
 
     ul {
         list-style: none;
+    }
+
+    h1, h2 {
+        font-size: 24px;
+    }
+
+    .button {
+        border: 1px solid $main-color;
+        display: inline-block;
+        padding: 5px 10px;
+        border-radius: 15px;
     }
 </style>

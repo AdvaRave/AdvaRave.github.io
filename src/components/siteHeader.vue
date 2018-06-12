@@ -4,13 +4,10 @@
             <router-link to="/" class="logo"></router-link>
             <ul>
                 <li>
-                    <a href="#">About Me</a>
+                    <a href="#projects" v-smooth-scroll>Latest Projects</a>
                 </li>
                 <li>
-                    <a href="#">My Work</a>
-                </li>
-                <li>
-                    <a href="#">Contact Me</a>
+                    <a href="#contact">Contact Me</a>
                 </li>
             </ul>
         </nav>

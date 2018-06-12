@@ -18,6 +18,7 @@ const vueRouter = new VueRouter({
     routes: [
         { path: '/', component: homepage },
         { path: '/projects', component: homepage },
+        { path: '/contact', component: homepage },
         { path: '/creojam', component: creojam },
         { path: '/print', component: print },
         { path: '/redis', component: redis },
