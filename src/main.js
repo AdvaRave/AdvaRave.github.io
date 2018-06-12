@@ -3,12 +3,12 @@ import App from './App.vue';
 import VueRouter from 'vue-router';
 import vueSmoothScroll from 'vue-smooth-scroll';
 
-import homepage from './components/homepage';
-import redis from './components/redis';
-import marketing from './components/marketing';
-import drawings from './components/drawings';
-import creojam from './components/creojam';
-import print from './components/print';
+import homepage from './pages/homepage';
+import redis from './pages/redis';
+import marketing from './pages/marketing';
+import drawings from './pages/drawings';
+import creojam from './pages/creojam';
+import print from './pages/print';
 
 Vue.config.productionTip = false;
 Vue.use(VueRouter);

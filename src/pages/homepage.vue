@@ -15,7 +15,15 @@
         <section class="projects" id="projects">
             <h2>My Latest Projects</h2>
             <ul>
-                <li>
+                <li class="creojam">
+                    <div class="logo"></div>
+                    <p>
+                        The best market for makers, connecting makers<br>and businesses.
+                    </p>
+                    <router-link to="/creojam" class="button">Read More</router-link>
+                    <div class="project-image"></div>
+                </li>
+                <li class="redis">
                     <div class="logo"></div>
                     <p>
                         Redis Description Redis Description Redis Description<br>
@@ -24,33 +32,24 @@
                     <router-link to="/redis" class="button">Read More</router-link>
                     <div class="project-image"></div>
                 </li>
-                <li>
-                    <div class="logo"></div>
-                    <p>
-                        Redis Description Redis Description Redis Description<br>
-                        Redis Description
-                    </p>
-                    <router-link to="/creojam" class="button">Read More</router-link>
-                    <div class="project-image"></div>
-                </li>
             </ul>
         </section>
         <section class="skills">
             <h2>More Skills</h2>
             <ul>
-                <li>
+                <li class="marketing">
                     <router-link to="/marketing">
                         <div></div>
                         <label>Web Marketing</label>
                     </router-link>
                 </li>
-                <li>
+                <li class="drawings">
                     <router-link to="/drawings">
                         <div></div>
                         <label>Drawing</label>
                     </router-link>
                 </li>
-                <li>
+                <li class="print">
                     <router-link to="/print">
                         <div></div>
                         <label>Print</label>
@@ -89,7 +88,7 @@
         }
 
         ul {
-            padding: 40px 0;
+            padding: 60px 0;
         }
     }
 
@@ -101,9 +100,10 @@
         .container {
             .photo {
                 display: inline-block;
-                background: $main-color;
-                width: 120px;
-                height: 120px;
+                background-image: url('../assets/homepage/portrait.png');
+                background-size: cover;
+                width: 180px;
+                height: 180px;
                 border-radius: 50%;
             }
 
@@ -139,7 +139,7 @@
             text-align: left;
 
             li {
-                margin: 0 20% 40px 20%;
+                margin: 0 20% 60px 20%;
                 padding: 40px;
                 background: linear-gradient(to right, $main-light, $white);
                 position: relative;
@@ -151,9 +151,11 @@
 
                 .logo {
                     display: inline-block;
-                    width: 200px;
-                    height: 50px;
-                    background: $main-color;
+                    width: 280px;
+                    height: 95px;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center center;
                 }
 
                 p {
@@ -164,9 +166,31 @@
                     position: absolute;
                     top: 10px;
                     right: 0;
-                    height: 200px;
-                    width: 200px;
-                    background: $main-color;
+                    height: 303px;
+                    width: 513px;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                }
+
+                &.creojam {
+                    .logo {
+                        background-image: url('../assets/homepage/creojam.png');
+                    }
+
+                    .project-image {
+                        background-image: url('../assets/homepage/creojam-mockup.png');
+                    }
+                }
+
+                &.redis {
+                    .logo {
+                        background-image: url('../assets/homepage/redislabs.png');
+                    }
+
+                    .project-image {
+                        background-image: url('../assets/homepage/redislabs-mockup.png');
+                    }
                 }
             }
         }
@@ -176,21 +200,41 @@
         ul {
             li {
                 display: inline-block;
-                padding: 0 50px;
+                padding: 0 80px;
 
                 a {
                     display: inline-block;
 
                     div {
                         display: inline-block;
-                        width: 100px;
+                        width: 137px;
                         height: 100px;
-                        background: $main-color;
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        background-position: center center;
                         margin-bottom: 10px;
                     }
 
                     label {
                         display: block;
+                    }
+                }
+
+                &.drawings {
+                    a div {
+                        background-image: url('../assets/homepage/icon-drawings.png');
+                    }
+                }
+
+                &.print {
+                    a div {
+                        background-image: url('../assets/homepage/icon-print.png');
+                    }
+                }
+
+                &.marketing {
+                    a div {
+                        background-image: url('../assets/homepage/icon-marketing.png');
                     }
                 }
             }
@@ -211,6 +255,10 @@
                 li {
                     padding: 20px 10px !important;
                     background: $main-light !important;
+
+                    .logo {
+                        width: 80%;
+                    }
 
                     .project-image {
                         display: none !important;
