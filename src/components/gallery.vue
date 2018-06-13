@@ -51,4 +51,10 @@
             cursor: pointer;
         }
     }
+
+    @media only screen and (max-width: 1024px) {
+        .gallery {
+            padding: 40px 0 0 0 !important;
+        }    
+    }
 </style>

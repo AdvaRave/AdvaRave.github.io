@@ -93,7 +93,7 @@
     }
 
     .intro {
-        padding: calc((100vh - 378px)/2) 0;
+        padding: calc((100vh - 438px)/2) 0;
         height: calc(100vh - 52px);
         box-sizing: border-box;
 
@@ -271,7 +271,7 @@
             ul {
                 li {
                     display: block !important;
-                    padding: 20px 0 !important;
+                    padding: 40px 0 !important;
                 }
             }
         }
