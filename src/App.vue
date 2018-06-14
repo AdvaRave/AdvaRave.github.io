@@ -51,4 +51,10 @@
         padding: 5px 10px;
         border-radius: 15px;
     }
+
+    .img {
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
 </style>

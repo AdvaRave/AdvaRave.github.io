@@ -1,6 +1,6 @@
 <template>
     <div class="marketing">
-        <div class="header-image"></div>
+        <div class="header-image img"></div>
         <h1>Web Marketing</h1>
         <gallery v-bind:images="images"></gallery>
     </div>
@@ -40,9 +40,6 @@
             display: inline-block;
             height: 137px;
             width: 100px;
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center center;
             background-image: url('../assets/homepage/icon-marketing.png');
         }
 

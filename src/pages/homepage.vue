@@ -2,7 +2,7 @@
     <div>
         <section class="intro">
             <div class="container">
-                <div class="photo"></div>
+                <div class="photo img"></div>
                 <h1>Hi, I'm Adva</h1>
                 <p>
                     I'm a data driven product and ux enthusiast.<br>
@@ -16,21 +16,21 @@
             <h2>My Latest Projects</h2>
             <ul>
                 <li class="creojam">
-                    <div class="logo"></div>
+                    <div class="logo img"></div>
                     <p>
                         The best market for makers, connecting makers<br>and businesses.
                     </p>
                     <router-link to="/creojam" class="button">Read More</router-link>
-                    <div class="project-image"></div>
+                    <div class="project-image img"></div>
                 </li>
                 <li class="redis">
-                    <div class="logo"></div>
+                    <div class="logo img"></div>
                     <p>
                         Redis Description Redis Description Redis Description<br>
                         Redis Description
                     </p>
                     <router-link to="/redis" class="button">Read More</router-link>
-                    <div class="project-image"></div>
+                    <div class="project-image img"></div>
                 </li>
             </ul>
         </section>
@@ -39,19 +39,19 @@
             <ul>
                 <li class="marketing">
                     <router-link to="/marketing">
-                        <div></div>
+                        <div class="img"></div>
                         <label>Web Marketing</label>
                     </router-link>
                 </li>
                 <li class="drawings">
                     <router-link to="/drawings">
-                        <div></div>
+                        <div class="img"></div>
                         <label>Drawing</label>
                     </router-link>
                 </li>
                 <li class="print">
                     <router-link to="/print">
-                        <div></div>
+                        <div class="img"></div>
                         <label>Print</label>
                     </router-link>
                 </li>
@@ -153,9 +153,6 @@
                     display: inline-block;
                     width: 280px;
                     height: 95px;
-                    background-size: contain;
-                    background-repeat: no-repeat;
-                    background-position: center center;
                 }
 
                 p {
@@ -168,9 +165,6 @@
                     right: 0;
                     height: 303px;
                     width: 513px;
-                    background-size: contain;
-                    background-repeat: no-repeat;
-                    background-position: center center;
                 }
 
                 &.creojam {
@@ -209,9 +203,6 @@
                         display: inline-block;
                         width: 137px;
                         height: 100px;
-                        background-size: contain;
-                        background-repeat: no-repeat;
-                        background-position: center center;
                         margin-bottom: 10px;
                     }
 

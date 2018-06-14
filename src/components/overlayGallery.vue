@@ -1,6 +1,6 @@
 <template>
     <div class="overlay">
-        <div v-bind:style="{'background-image': 'url(\'' + images[selectedIndex].src + '\')'}">
+        <div class="img" v-bind:style="{'background-image': 'url(\'' + images[selectedIndex].src + '\')'}">
             <a class="right" v-show="selectedIndex < images.length - 1" v-on:click="next"><i class="fa fa-chevron-circle-right"></i></a>
             <a class="left" v-show="selectedIndex > 0" v-on:click="prev"><i class="fa fa-chevron-circle-left"></i></a>
         </div>
@@ -51,22 +51,18 @@
         background: $overlay;
         padding: 5vw;
         box-sizing: border-box;
-        color: $white;
+        color: $main-color;
         z-index: 1;
 
         > div {
             width: 90vw;
             height: 100%;
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center center;
             position: relative;
             display: inline-block;
 
             a {
                 position: absolute;
                 top: calc((100% - 60px) / 2);
-                color: $white;
                 font-size: 60px;
                 opacity: 0.6;
 

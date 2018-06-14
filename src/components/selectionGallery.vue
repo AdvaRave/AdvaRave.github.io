@@ -1,12 +1,12 @@
 <template>
     <div class="gallery">
         <section>
-            <div v-bind:style="{'background-image': 'url(\'' + images[selectedIndex].src + '\')'}" v-on:click="overlayDisplayed=true">
+            <div class="img" v-bind:style="{'background-image': 'url(\'' + images[selectedIndex].src + '\')'}" v-on:click="overlayDisplayed=true">
                 <a class="right" v-show="selectedIndex < images.length - 1" v-on:click="next" v-on:click.stop><i class="fa fa-chevron-circle-right"></i></a>
                 <a class="left" v-show="selectedIndex > 0" v-on:click="prev" v-on:click.stop><i class="fa fa-chevron-circle-left"></i></a>
             </div>
             <ul>
-                <li v-for="(image, index) in images" v-bind:style="{'background-image': 'url(\'' + image.src + '\')'}" v-on:click="selectedIndex=index">
+                <li class="img" v-for="(image, index) in images" v-bind:style="{'background-image': 'url(\'' + image.src + '\')'}" v-on:click="selectedIndex=index">
                 </li>
             </ul>
         </section>
@@ -60,9 +60,6 @@
 
             > div {
                 height: 600px;
-                background-size: contain;
-                background-repeat: no-repeat;
-                background-position: center center;
                 cursor: pointer;
                 border-radius: 10px;
                 position: relative;
@@ -97,7 +94,6 @@
                     height: 100px;
                     width: 100px;
                     background-size: cover;
-                    background-position: center center;
                     border-radius: 10px;
                     cursor: pointer;
                 }
