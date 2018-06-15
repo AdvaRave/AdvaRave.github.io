@@ -1,6 +1,6 @@
 <template>
     <article>
-        <h1 class="img"></h1>
+        <div class="header"><h1 class="img"></h1></div>
         <section>
             <h2>Introduction</h2>
             <p>
@@ -128,11 +128,16 @@
     article {
         padding: 50px 160px;
 
-        h1 {
-            display: inline-block;
-            width: 220px;
-            height: 75px;
-            background-image: url('../assets/homepage/redislabs.png');
+        .header {
+            text-align: center;
+            padding-bottom: 20px;
+
+            h1 {
+                display: inline-block;
+                width: 220px;
+                height: 75px;
+                background-image: url('../assets/homepage/redislabs.png');
+            }
         }
 
         section {

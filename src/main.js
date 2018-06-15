@@ -24,7 +24,14 @@ const vueRouter = new VueRouter({
         { path: '/redis', component: redis },
         { path: '/marketing', component: marketing },
         { path: '/drawings', component: drawings }
-    ]
+    ],
+    scrollBehavior: function (to, from, savedPosition) {
+        if (savedPosition) {
+            return savedPosition;
+        } else {
+            return { x: 0, y: 0 };
+        }
+    }
 });
 
 new Vue({
