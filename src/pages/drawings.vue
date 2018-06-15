@@ -14,11 +14,12 @@
         data: function () {
             return {
                 images: [
-                    { src: require('../assets/drawings/amigo.jpg') },
+                    /*{ src: require('../assets/drawings/amigo.jpg') },
                     { src: require('../assets/drawings/chitah.jpg') },
                     { src: require('../assets/drawings/dance.jpg') },
                     { src: require('../assets/drawings/ear.jpg') },
-                    { src: require('../assets/drawings/face.jpg') }
+                    { src: require('../assets/drawings/face.jpg'),
+                    { src: ''} }*/
                 ]
             };
         },

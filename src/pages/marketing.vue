@@ -18,7 +18,8 @@
                     { src: require('../assets/marketing/hiring.jpg') },
                     { src: require('../assets/marketing/pentecost.jpg') },
                     { src: require('../assets/marketing/adidas.jpg') },
-                    { src: require('../assets/marketing/wipes.jpg') }
+                    { src: require('../assets/marketing/wipes.jpg') },
+                    { src: '' }
                 ]
             };
         },

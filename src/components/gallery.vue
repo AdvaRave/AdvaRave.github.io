@@ -40,6 +40,9 @@
     }
 
     ul {
+        max-width: 1024px;
+        display: inline-block;
+
         li { 
             display: inline-block;
             margin: 10px;
@@ -48,6 +51,27 @@
             background-size: cover;
             border-radius: 10px;
             cursor: pointer;
+            background-color: $main-light;
+            position: relative;
+
+            &:after {
+                content: " ";
+                display: inline-block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: $main-color;
+                opacity: 0.25;
+                border-radius: 10px;
+            }
+
+            &:hover {
+                &:after {
+                    opacity: 0;
+                }
+            }
         }
     }
 

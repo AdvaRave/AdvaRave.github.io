@@ -6,9 +6,10 @@
                 <li>
                     <a href="#projects" v-smooth-scroll>Latest Projects</a>
                 </li>
-                <li>
-                    <a href="#contact">Contact Me</a>
-                </li>
+                <li class="seperator"></li>
+                <li><a href="https://www.linkedin.com/in/adva-rave-00281596" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                <li><a href="https://www.instagram.com/advarave" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="mailto:advarave@gmail.com"><i class="far fa-envelope"></i></a></li>
             </ul>
         </nav>
     </header>
@@ -47,6 +48,29 @@
                 li {
                     display: inline-block;
                     padding: 0 10px;
+
+                    &.seperator {
+                        border-left: 2px solid $white;
+                        height: 23px;
+                        padding: 0;
+                        margin: 0 10px 0 7px;
+                        vertical-align: bottom;
+                    }
+
+                    a {
+                        i {
+                            font-size: 20px;
+
+                            &.fa-linkedin-in {
+                                border: 1.5px solid $white;
+                                padding: 3px 4px;
+                                font-size: 10px;
+                                border-radius: 3px;
+                                position: relative;
+                                top: -3px;
+                            }
+                        }
+                    }
                 }
             }
         }

@@ -5,7 +5,7 @@
                 <a class="right" v-show="selectedIndex < images.length - 1" v-on:click="next" v-on:click.stop><i class="fa fa-chevron-circle-right"></i></a>
                 <a class="left" v-show="selectedIndex > 0" v-on:click="prev" v-on:click.stop><i class="fa fa-chevron-circle-left"></i></a>
             </div>
-            <ul>
+            <ul v-show="images.length > 1">
                 <li class="img" v-for="(image, index) in images" v-bind:style="{'background-image': 'url(\'' + image.src + '\')'}" v-on:click="selectedIndex=index">
                 </li>
             </ul>
@@ -62,12 +62,12 @@
                 height: 600px;
                 cursor: pointer;
                 border-radius: 10px;
+                color: $main-color;
                 position: relative;
 
                 a {
                     position: absolute;
                     top: calc((100% - 40px) / 2);
-                    color: $white;
                     font-size: 40px;
                     opacity: 0.6;
 
@@ -101,5 +101,13 @@
         }
     }
 
-    
+    @media only screen and (max-width: 1024px) {
+        .gallery {
+            section {
+                ul {
+                    display: none;
+                }
+            }
+        }
+    }
 </style>

@@ -1,9 +1,8 @@
 <template>
     <div class="overlay">
-        <div class="img" v-bind:style="{'background-image': 'url(\'' + images[selectedIndex].src + '\')'}">
-            <a class="right" v-show="selectedIndex < images.length - 1" v-on:click="next"><i class="fa fa-chevron-circle-right"></i></a>
-            <a class="left" v-show="selectedIndex > 0" v-on:click="prev"><i class="fa fa-chevron-circle-left"></i></a>
-        </div>
+        <a class="right" v-show="selectedIndex < images.length - 1" v-on:click="next"><i class="fa fa-chevron-circle-right"></i></a>
+        <div class="img" v-bind:style="{'background-image': 'url(\'' + images[selectedIndex].src + '\')'}"></div>
+        <a class="left" v-show="selectedIndex > 0" v-on:click="prev"><i class="fa fa-chevron-circle-left"></i></a>
         <a class="close" v-on:click="$emit('close')"><i class="fa fa-times"></i></a>
     </div>
 </template>
@@ -34,6 +33,14 @@
                 if (event.keyCode == 27) { 
                     that.$emit('close');
                 }
+
+                if (event.keyCode == 37) { 
+                    that.prev();
+                }
+
+                if (event.keyCode == 39) { 
+                    that.next();
+                }
             });
         }
     };
@@ -55,28 +62,28 @@
         z-index: 1;
 
         > div {
-            width: 90vw;
+            width: 80vw;
             height: 100%;
-            position: relative;
             display: inline-block;
+            border-radius: 10px;
+        }
 
-            a {
-                position: absolute;
-                top: calc((100% - 60px) / 2);
-                font-size: 60px;
-                opacity: 0.6;
+        a {
+            position: absolute;
+            top: calc((100% - 60px) / 2);
+            font-size: 50px;
+            opacity: 0.6;
 
-                &:hover {
-                    opacity: 0.9;
-                }
+            &:hover {
+                opacity: 0.9;
+            }
 
-                &.right {
-                    right: 20px;
-                }
+            &.right {
+                right: 40px;
+            }
 
-                &.left {
-                    left: 20px;
-                }
+            &.left {
+                left: 40px;
             }
         }
 

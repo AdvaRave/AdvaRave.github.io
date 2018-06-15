@@ -18,7 +18,8 @@
                 <li class="creojam">
                     <div class="logo img"></div>
                     <p>
-                        The best market for makers, connecting makers<br>and businesses.
+                        Creojam is a DIY guides and marketplace platform<br> 
+                        and community that connects makers and businesses
                     </p>
                     <router-link to="/creojam" class="button">Read More</router-link>
                     <div class="project-image img"></div>
@@ -26,8 +27,8 @@
                 <li class="redis">
                     <div class="logo img"></div>
                     <p>
-                        Redis Description Redis Description Redis Description<br>
-                        Redis Description
+                        Redis Labs is the home of Redis, the world’s most popular<br> 
+                        in-memory database, and commercial provider of Redis Enterprise
                     </p>
                     <router-link to="/redis" class="button">Read More</router-link>
                     <div class="project-image img"></div>
@@ -38,39 +39,63 @@
             <h2>More Skills</h2>
             <ul>
                 <li class="marketing">
-                    <router-link to="/marketing">
-                        <div class="img"></div>
-                        <label>Web Marketing</label>
-                    </router-link>
+                    <div class="header-image img"></div>
+                    <h2>Web Marketing</h2>
+                    <gallery v-bind:images="images.marketing"></gallery>
                 </li>
                 <li class="drawings">
-                    <router-link to="/drawings">
-                        <div class="img"></div>
-                        <label>Drawing</label>
-                    </router-link>
+                    <div class="header-image img"></div>
+                    <h2>Drawings</h2>
+                    <gallery v-bind:images="images.drawings"></gallery>
                 </li>
                 <li class="print">
-                    <router-link to="/print">
-                        <div class="img"></div>
-                        <label>Print</label>
-                    </router-link>
+                    <div class="header-image img"></div>
+                    <h2>Print</h2>
+                    <gallery v-bind:images="images.print"></gallery>
                 </li>
             </ul>
-        </section>
-        <section class="contact" id="contact">
-            <h2>Contact Me</h2>
-            <p>
-                Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum 
-                Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum 
-                Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum 
-            </p>
         </section>
     </div>
 </template>
 
 <script>
+    import gallery from '../components/gallery';
+
     export default {
-        name: 'homepage'
+        name: 'homepage',
+        components: {
+            'gallery': gallery
+        },
+        data: function () {
+            return {
+                images: {
+                    marketing: [
+                        { src: require('../assets/marketing/game-night.jpg') },
+                        { src: require('../assets/marketing/hiring.jpg') },
+                        { src: require('../assets/marketing/pentecost.jpg') },
+                        { src: require('../assets/marketing/adidas.jpg') },
+                        { src: require('../assets/marketing/wipes.jpg') },
+                        { src: require('../assets/marketing/creojam.gif') }
+                    ],
+                    print: [
+                        { src: require('../assets/print/booth.jpg') },
+                        { src: require('../assets/print/store.jpg') },
+                        { src: require('../assets/print/mockup.jpg') },
+                        { src: require('../assets/print/calendar.gif') },
+                        { src: '' },
+                        { src: '' }
+                    ],
+                    drawings: [
+                        { src: require('../assets/drawings/dance.jpg') },
+                        { src: require('../assets/drawings/ear.jpg') },
+                        { src: require('../assets/drawings/face.jpg') },
+                        { src: require('../assets/drawings/amigo.jpg') },
+                        { src: require('../assets/drawings/cheetah.jpg') },
+                        { src: ''}
+                    ]
+                }
+            };
+        },
     };
 </script>
 
@@ -81,7 +106,7 @@
         text-align: center;
         color: $main-color;
 
-        h2 {
+        > h2 {
             display: block;
             background: $main-light;
             padding: 10px;
@@ -137,9 +162,12 @@
     .projects {
         ul {
             text-align: left;
+            width: $default-width;
+            display: inline-block;
+            padding: 100px 0;
 
             li {
-                margin: 0 20% 60px 20%;
+                margin-bottom: 100px;
                 padding: 40px;
                 background: linear-gradient(to right, $main-light, $white);
                 position: relative;
@@ -151,12 +179,17 @@
 
                 .logo {
                     display: inline-block;
-                    width: 280px;
-                    height: 95px;
+                    width: 220px;
+                    height: 75px;
                 }
 
                 p {
-                    padding: 10px 0;
+                    padding: 20px 0 30px 0;
+                }
+
+                .button {
+                    padding: 7px 16px;
+                    border-radius: 18px;
                 }
 
                 .project-image {
@@ -192,49 +225,47 @@
 
     .skills {
         ul {
+            padding: 0;
+
             li {
-                display: inline-block;
-                padding: 0 80px;
+                padding-top: 30px;
+                text-align: center;
+                border-top: 2px solid $main-light;
 
-                a {
-                    display: inline-block;
-
-                    div {
-                        display: inline-block;
-                        width: 137px;
-                        height: 100px;
-                        margin-bottom: 10px;
-                    }
-
-                    label {
-                        display: block;
-                    }
+                &:first-child {
+                    border-top: 0;
                 }
 
-                &.drawings {
-                    a div {
-                        background-image: url('../assets/homepage/icon-drawings.png');
+                .header-image {
+                    display: inline-block;
+                    height: 137px;
+                    width: 100px;
+
+                }
+
+                h2 {
+                    padding: 0 0 20px 0;
+                    border-bottom: 2px solid $main-light;
+                }
+
+                &.marketing {
+                    .header-image {
+                        background-image: url('../assets/homepage/icon-marketing.png');
                     }
                 }
 
                 &.print {
-                    a div {
+                    .header-image {
                         background-image: url('../assets/homepage/icon-print.png');
                     }
                 }
 
-                &.marketing {
-                    a div {
-                        background-image: url('../assets/homepage/icon-marketing.png');
+                &.drawings {
+                    .header-image {
+                        background-image: url('../assets/homepage/icon-drawings.png');
                     }
                 }
             }
-        }
-    }
-
-    .contact {
-        p {
-            padding: 50px 20%;
         }
     }
 
@@ -242,27 +273,19 @@
         .projects {
             ul {
                 text-align: center !important;
+                width: auto !important;
 
                 li {
                     padding: 20px 10px !important;
                     background: $main-light !important;
 
                     .logo {
-                        width: 80%;
+                        width: 65%;
                     }
 
                     .project-image {
                         display: none !important;
                     }
-                }
-            }
-        }
-
-        .skills {
-            ul {
-                li {
-                    display: block !important;
-                    padding: 40px 0 !important;
                 }
             }
         }
