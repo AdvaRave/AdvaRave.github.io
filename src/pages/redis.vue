@@ -135,9 +135,10 @@
     @import "../styles/globals.scss";
 
     article {
-        padding: 50px 160px;
+        display: inline-block;
         max-width: $page-width;
         text-align: left;
+        padding: 50px 0;
 
         .button {
             border-color: $redis-red;
@@ -206,7 +207,7 @@
 
     @media only screen and (max-width: 1024px) {
         article {
-            padding: 40px;
+            padding: 10% !important;
 
             .header {
                 ul {

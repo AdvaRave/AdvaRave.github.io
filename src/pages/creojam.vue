@@ -230,7 +230,7 @@
         </section>
         <section id="architecture">
             <h2>Architecture</h2>
-            <selection-gallery v-bind:images="images.architecture"></selection-gallery>
+            <!--selection-gallery v-bind:images="images.architecture"></selection-gallery-->
         </section>
         <section>
             <h2>The Implementation</h2>
@@ -315,6 +315,7 @@
     @import "../styles/globals.scss";
 
     article {        
+        display: inline-block;
         max-width: $page-width;
         text-align: left;
         padding: 50px 0;
@@ -589,7 +590,7 @@
 
     @media only screen and (max-width: 1024px) {
         article {
-            padding: 30px !important;
+            padding: 10% !important;
 
             .horizontal {
                 .right, .left {
@@ -599,7 +600,7 @@
             }
 
             .primary-persona {
-                padding: 40px !important;
+                padding: 10% !important;
 
                 .img {
                     margin: 20px 0 !important;
