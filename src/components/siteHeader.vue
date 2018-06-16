@@ -4,7 +4,7 @@
             <router-link to="/" class="logo"></router-link>
             <ul>
                 <li>
-                    <a href="#projects" v-smooth-scroll>Latest Projects</a>
+                    <a href="/" v-smooth-scroll:projects>Latest Projects</a>
                 </li>
                 <li class="seperator"></li>
                 <li><a href="https://www.linkedin.com/in/adva-rave-00281596" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
@@ -60,15 +60,6 @@
                     a {
                         i {
                             font-size: 20px;
-
-                            &.fa-linkedin-in {
-                                border: 1.5px solid $white;
-                                padding: 3px 4px;
-                                font-size: 10px;
-                                border-radius: 3px;
-                                position: relative;
-                                top: -3px;
-                            }
                         }
                     }
                 }

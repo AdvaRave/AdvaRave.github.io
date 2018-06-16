@@ -1,6 +1,15 @@
 <template>
     <article>
-        <div class="header"><h1 class="img"></h1></div>
+        <div class="header">
+            <h1 class="img"></h1>
+            <div><a class="button" href="https://www.redislabs.com" target="_blank">Go to Redislabs.com</a></div>
+            <ul>
+                <li><a v-smooth-scroll:main-flow>Main Flow</a></li>
+                <li><a v-smooth-scroll:new-flow>New Flow</a></li>
+                <li><a v-smooth-scroll:old-ui>Old UI</a></li>
+                <li><a v-smooth-scroll:new-ui>New UI</a></li>
+            </ul>
+        </div>
         <section>
             <h2>Introduction</h2>
             <p>
@@ -17,7 +26,7 @@
                 I analyzed the current flow and design and documented all the issues that can be improved.
             </p>
         </section>
-        <section class="main-flow">
+        <section class="main-flow" id="main-flow">
             <h2>The Main Flow</h2>
             <p>
                 The main product flow is the subscription flow.<br>
@@ -35,7 +44,7 @@
                 <li>Wrong UI solutions</li>
              </ul>
         </section>
-        <section class="new-flow">
+        <section class="new-flow" id="new-flow">
             <h2>The New Flow</h2>
             <selection-gallery v-bind:images="images.newFlow"></selection-gallery>
         </section>
@@ -47,14 +56,14 @@
                 <li>One consecutive flow</li>
              </ul>
         </section>
-        <section class="old-ui">
+        <section class="old-ui" id="old-ui">
             <h2>The Old UI</h2>
             <p>
                 Tap the gallery to watch the old UI and my analysis:
             </p>
             <selection-gallery v-bind:images="images.oldUI"></selection-gallery>
         </section>
-        <section class="new-ui">
+        <section class="new-ui" id="new-ui">
             <h2>The New UI</h2>
             <p>
                 My guidelines for the new UI were:
@@ -127,16 +136,45 @@
 
     article {
         padding: 50px 160px;
+        max-width: $page-width;
+        text-align: left;
+
+        .button {
+            border-color: $redis-red;
+        }
 
         .header {
             text-align: center;
-            padding-bottom: 20px;
+            padding-bottom: 40px;
 
             h1 {
                 display: inline-block;
+                margin-bottom: 20px;
                 width: 220px;
                 height: 75px;
-                background-image: url('../assets/homepage/redislabs.png');
+                background-image: url('../assets/redis/redislabs.png');
+            }
+
+            a {
+                color: $redis-red;
+                padding: 5px 16px;
+            }
+
+            ul {
+                margin-top: 40px;
+                padding: 20px 0;
+                border-top: 2px solid $redis-red-light;
+                border-bottom: 2px solid $redis-red-light;
+
+                li {
+                    display: inline-block;
+                    padding: 0 40px;
+                    border-right: 2px solid $redis-red-light;
+
+                    &:last-child {
+                        border-right: 0;
+                    }
+                }
             }
         }
 
@@ -144,7 +182,7 @@
             padding: 20px 0;
 
             h2 {
-                color: $main-color;
+                color: $redis-red;
                 padding-bottom: 20px;
             }
 
@@ -158,7 +196,7 @@
                 li {
                     &:before {    
                         content: "•";
-                        color: $main-color;
+                        color: $redis-red;
                         padding-right: 7px;
                     }
                 }
@@ -169,6 +207,26 @@
     @media only screen and (max-width: 1024px) {
         article {
             padding: 40px;
+
+            .header {
+                ul {
+                    li {
+                        padding: 20px 0 !important;
+                        display: block !important;
+                        border-right: none;
+                        border-bottom: 2px solid $redis-red-light;
+
+                        &:first-child {
+                            padding-top: 5px !important;
+                        }
+
+                        &:last-child {
+                            border-bottom: none !important;
+                            padding-bottom: 0 !important;
+                        }
+                    }
+                }
+            }
         }
     }
 </style>

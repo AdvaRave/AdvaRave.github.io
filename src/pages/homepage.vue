@@ -9,7 +9,7 @@
                     I produce elegant solutions with a<br>
                     human-centered design approach.<br>
                 </p>
-                <a href="#projects" v-smooth-scroll class="arrow"></a>
+                <a v-smooth-scroll:projects class="arrow"></a>
             </div>
         </section>
         <section class="projects" id="projects">
@@ -276,11 +276,12 @@
                 width: auto !important;
 
                 li {
+                    max-width: 300px;
                     padding: 20px 10px !important;
                     background: $main-light !important;
 
                     .logo {
-                        width: 65%;
+                        width: 55%;
                     }
 
                     .project-image {

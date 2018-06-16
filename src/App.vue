@@ -24,6 +24,11 @@
     body {
         font-family: 'Nunito', sans-serif;
         font-size: 16px;
+        font-color: $text-default;
+    }
+
+    main {
+        text-align: center;
     }
 
     * {    
