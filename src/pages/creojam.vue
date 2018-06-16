@@ -314,8 +314,7 @@
 <style lang="scss" scoped>
     @import "../styles/globals.scss";
 
-    article {
-        display: inline-block;
+    article {        
         max-width: $page-width;
         text-align: left;
         padding: 50px 0;
@@ -590,9 +589,7 @@
 
     @media only screen and (max-width: 1024px) {
         article {
-            display: block !important;
-            max-width: 100% !important;
-            padding: 30px 10% !important;
+            padding: 30px !important;
 
             .horizontal {
                 .right, .left {
