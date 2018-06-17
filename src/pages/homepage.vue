@@ -287,8 +287,8 @@
                     .project-image {
                         display: inline-block !important;
                         position: static !important;
-                        width: 75vw !important;
-                        height: calc(75vw / 1.7) !important;
+                        width: 250px !important;
+                        height: 150px !important;
                         margin-bottom: 20px;
                     }
                 }
