@@ -7,7 +7,7 @@ git push origin dev
 
 cp -R dist dist_temp
 git checkout master
-git pull orgin master
+git pull origin master
 shopt -s extglob
 rm -rf !(node_modules|.gitignore|.git|dist_temp|.|..)
 cp -R dist_temp/* .
