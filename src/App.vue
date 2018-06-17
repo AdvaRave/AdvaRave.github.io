@@ -72,6 +72,7 @@
         b {
             padding-right: 10px;
         }
+
         a {
             position: fixed;
             bottom: 0;
@@ -79,6 +80,15 @@
             background: $main-color;
             padding: 10px 15px;
             font-size: 20px;
+        }
+    }
+
+    @media only screen and (max-width: 1024px) {
+        footer {
+            a {
+                font-size: 18px !important;
+                padding: 5px 10px !important;
+            }
         }
     }
 </style>

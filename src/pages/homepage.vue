@@ -21,8 +21,8 @@
                         Creojam is a DIY guides and marketplace platform<br> 
                         and community that connects makers and businesses
                     </p>
-                    <router-link to="/creojam" class="button">Read More</router-link>
                     <div class="project-image img"></div>
+                    <router-link to="/creojam" class="button">Read More</router-link>
                 </li>
                 <li class="redis">
                     <div class="logo img"></div>
@@ -30,8 +30,8 @@
                         Redis Labs is the home of Redis, the world’s most popular<br> 
                         in-memory database, and commercial provider of Redis Enterprise
                     </p>
-                    <router-link to="/redis" class="button">Read More</router-link>
                     <div class="project-image img"></div>
+                    <router-link to="/redis" class="button">Read More</router-link>
                 </li>
             </ul>
         </section>
@@ -285,9 +285,28 @@
                     }
 
                     .project-image {
-                        display: none !important;
+                        display: inline-block !important;
+                        position: static !important;
+                        width: 75vw !important;
+                        height: calc(75vw / 1.7) !important;
+                        margin-bottom: 20px;
                     }
                 }
+            }
+        }
+    }
+
+    @media only screen and (max-height: 500px) {
+        .intro {
+            padding: 20px !important;
+
+            .photo {
+                width: 90px !important;
+                height: 90px !important;
+            }
+
+            .arrow {
+                margin-top: 20px !important;
             }
         }
     }

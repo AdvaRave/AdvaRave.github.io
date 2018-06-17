@@ -232,9 +232,9 @@
                 </ul>
             </section>
         </section>
-        <section id="sitemap">
+        <section class="sitemap" id="sitemap">
             <h2>Sitemap</h2>
-            <!--selection-gallery v-bind:images="images.sitemap"></selection-gallery-->
+            <selection-gallery v-bind:images="images.sitemap"></selection-gallery>
         </section>
         <section>
             <h2>The Implementation</h2>
@@ -294,10 +294,34 @@
             return {
                 images: {
                     sitemap: [
-                        {src: ''}
+                        {src: require('../assets/creojam/sitemap.png')}
                     ],
                     wireframes: [
-                        {src: require('../assets/creojam/wireframe1.png')}
+                        {src: require('../assets/creojam/wireframes/0.png')},
+                        {src: require('../assets/creojam/wireframes/1.jpg')},
+                        {src: require('../assets/creojam/wireframes/2.jpg')},
+                        {src: require('../assets/creojam/wireframes/3.jpg')},
+                        {src: require('../assets/creojam/wireframes/4.jpg')},
+                        {src: require('../assets/creojam/wireframes/5.jpg')},
+                        {src: require('../assets/creojam/wireframes/6.jpg')},
+                        {src: require('../assets/creojam/wireframes/7.jpg')},
+                        {src: require('../assets/creojam/wireframes/8.jpg')},
+                        {src: require('../assets/creojam/wireframes/9.jpg')},
+                        {src: require('../assets/creojam/wireframes/10.jpg')},
+                        {src: require('../assets/creojam/wireframes/11.jpg')},
+                        {src: require('../assets/creojam/wireframes/12.jpg')},
+                        {src: require('../assets/creojam/wireframes/13.jpg')},
+                        {src: require('../assets/creojam/wireframes/a.jpg')},
+                        {src: require('../assets/creojam/wireframes/b.jpg')},
+                        {src: require('../assets/creojam/wireframes/c.jpg')},
+                        {src: require('../assets/creojam/wireframes/d.jpg')},
+                        {src: require('../assets/creojam/wireframes/e.jpg')},
+                        {src: require('../assets/creojam/wireframes/f.jpg')},
+                        {src: require('../assets/creojam/wireframes/g.jpg')},
+                        {src: require('../assets/creojam/wireframes/h.jpg')},
+                        {src: require('../assets/creojam/wireframes/i.jpg')},
+                        {src: require('../assets/creojam/wireframes/j.jpg')},
+                        {src: require('../assets/creojam/wireframes/k.jpg')}
                     ],
                     uiGuidelines: [
                         {src: require('../assets/creojam/ui-guidelines.jpg')}
@@ -311,7 +335,7 @@
                         {src: require('../assets/creojam/preview/3.jpg')},
                         {src: require('../assets/creojam/preview/4.jpg')},
                         {src: require('../assets/creojam/preview/5.jpg')},
-                        {src: require('../assets/creojam/preview/6.jpg')}
+                        {src: require('../assets/creojam/preview/6.png')}
                     ]
                 }
             };
@@ -678,7 +702,7 @@
             section {
                 width: 680px;
 
-                .img {
+                div.img {
                     width: 100%;
                     height: 910px;
                 }
@@ -700,6 +724,21 @@
                 .img {
                     width: 100%;
                     height: 581px;
+                }
+            }
+        }
+    }
+
+    .sitemap {
+        .gallery {
+            padding: 40px 0 0 0;
+
+            section {
+                width: 1024px;
+
+                .img {
+                    width: 100%;
+                    height: 300px;
                 }
             }
         }
@@ -734,6 +773,29 @@
 
                     .img {
                         height: calc(60vw * 1.4) !important;
+                    }
+                }
+            }
+        }
+
+        .screens {
+            .gallery {
+                ul {
+                    li {
+                        width: 260px !important;
+                        height: 260px !important;
+                    }
+                }
+            }
+        }
+
+        .sitemap {
+            .gallery { 
+                section {
+                    width: 80vw !important;
+
+                    .img {
+                        height: calc(80vw / 3.5) !important;
                     }
                 }
             }

@@ -2,7 +2,7 @@
     <article>
         <div class="header">
             <h1 class="img"></h1>
-            <div><a class="button" href="https://www.redislabs.com" target="_blank">Go to Redislabs.com</a></div>
+            <div><a class="button" href="https://www.redislabs.com" target="_blank">Take me to redislabs</a></div>
             <ul>
                 <li><a v-smooth-scroll:main-flow>Main Flow</a></li>
                 <li><a v-smooth-scroll:new-flow>New Flow</a></li>
@@ -324,6 +324,17 @@
 
                     .img {
                         height: calc(80vw / 2) !important;
+                    }
+                }
+            }
+        }
+
+        .p-preview {
+            .gallery {
+                ul {
+                    li {
+                        width: 260px !important;
+                        height: 260px !important;
                     }
                 }
             }
