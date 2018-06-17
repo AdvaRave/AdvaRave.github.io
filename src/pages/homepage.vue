@@ -95,18 +95,6 @@
                     ]
                 }
             };
-        },
-        mounted: function() {
-            var images = [
-                require('../assets/homepage/portrait.png'),
-                require('../assets/homepage/creojam-mockup.png'),
-                require('../assets/homepage/redislabs-mockup.png')
-            ];
-
-            for (var i = 0; i < images.length; ++i) {
-                var img = new Image();
-                img.src = images['url'];
-            }
         }
     };
 </script>
