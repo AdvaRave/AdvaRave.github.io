@@ -10,6 +10,10 @@
                 <li><a v-smooth-scroll:new-ui>New UI</a></li>
             </ul>
         </div>
+        <section class="p-preview">
+            <h2>Product Preview</h2>
+            <gallery v-bind:images="images.newUI"></gallery>   
+        </section>
         <section>
             <h2>Introduction</h2>
             <p>
@@ -90,11 +94,13 @@
 
 <script>
     import selectionGallery from '../components/selectionGallery';
+    import gallery from '../components/gallery';
 
     export default {
         name: 'redis',
         components: {
-            'selection-gallery': selectionGallery
+            'selection-gallery': selectionGallery,
+            'gallery': gallery
         },
         data: function () {
             return {
@@ -233,16 +239,18 @@
 </style>
 
 <style lang="scss">
+    @import "../styles/globals.scss";
+
     .main-flow {
         .gallery {
             padding: 40px 0 0 0;
 
             section {
-                width: 900px;
+                width: 700px;
 
                 .img {
                     width: 100%;
-                    height: 450px;
+                    height: 350px;
                 }
             }
         }
@@ -268,11 +276,15 @@
             padding: 40px 0 0 0;
 
             section {
-                width: 650px;
+                width: 900px;
 
                 div.img {
                     width: 100%;
-                    height: 900px;
+                    height: 880px;
+                }
+
+                .fa {
+                    color: $redis-red;
                 }
             }
         }
@@ -289,9 +301,20 @@
                     width: 100%;
                     height: 905px;
                 }
+
+                .fa {
+                    color: $redis-red;
+                }
             }
         }
     }
+
+    .p-preview {
+        .gallery {
+            padding: 20px 0;
+        }
+    }
+
 
     @media only screen and (max-width: 1024px) {
         .main-flow {

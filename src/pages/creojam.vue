@@ -6,11 +6,15 @@
             <ul>
                 <li><a v-smooth-scroll:research>Market Research</a></li>
                 <li><a v-smooth-scroll:personas>Personas</a></li>
-                <li><a v-smooth-scroll:architecture>Architecture</a></li>
+                <li><a v-smooth-scroll:sitemap>Sitemap</a></li>
                 <li><a v-smooth-scroll:ui>Product UI</a></li>
                 <li><a v-smooth-scroll:testing>User Testing</a></li>
             </ul>
         </div>
+        <section class="screens">
+            <h2>Product Preview</h2>
+            <gallery v-bind:images="images.screens"></gallery>   
+        </section>
         <section>
             <h2>The Problem</h2>
             <ul>
@@ -228,9 +232,9 @@
                 </ul>
             </section>
         </section>
-        <section id="architecture">
-            <h2>Architecture</h2>
-            <!--selection-gallery v-bind:images="images.architecture"></selection-gallery-->
+        <section id="sitemap">
+            <h2>Sitemap</h2>
+            <!--selection-gallery v-bind:images="images.sitemap"></selection-gallery-->
         </section>
         <section>
             <h2>The Implementation</h2>
@@ -272,25 +276,24 @@
             </p>
              <selection-gallery v-bind:images="images.userTesting"></selection-gallery>
         </section>
-        <section class="screens">
-            <selection-gallery v-bind:images="images.screens"></selection-gallery>   
-        </section>
         <div class="end"><a class="button" href="https://www.creojam.com" target="_blank">Take me to Creojam</a></div>
     </article>
 </template>
 
 <script>
     import selectionGallery from '../components/selectionGallery';
+    import gallery from '../components/gallery';
 
     export default {
         name: 'creojam',
         components: {
-            'selection-gallery': selectionGallery
+            'selection-gallery': selectionGallery,
+            'gallery': gallery
         },
         data: function () {
             return {
                 images: {
-                    architecture: [
+                    sitemap: [
                         {src: ''}
                     ],
                     wireframes: [
@@ -303,7 +306,12 @@
                         {src: require('../assets/creojam/user-testing.jpg')}
                     ],
                     screens: [
-                        {src: require('../assets/creojam/creo-screen.png')}
+                        {src: require('../assets/creojam/preview/1.jpg')},
+                        {src: require('../assets/creojam/preview/2.jpg')},
+                        {src: require('../assets/creojam/preview/3.jpg')},
+                        {src: require('../assets/creojam/preview/4.jpg')},
+                        {src: require('../assets/creojam/preview/5.jpg')},
+                        {src: require('../assets/creojam/preview/6.jpg')}
                     ]
                 }
             };
@@ -661,6 +669,8 @@
 </style>
 
 <style lang="scss">
+    @import "../styles/globals.scss";
+
     .wireframes {
         .gallery {
             padding: 40px 0 0 0;
@@ -671,6 +681,10 @@
                 .img {
                     width: 100%;
                     height: 910px;
+                }
+
+                .fa {
+                    color: $creo-blue;
                 }
             }
         }
@@ -693,16 +707,7 @@
 
     .screens {
         .gallery {
-            padding: 40px 0 0 0;
-
-            section {
-                width: 664px;
-
-                .img {
-                    width: 100%;
-                    height: 894px;
-                }
-            }
+            padding: 20px 0;
         }
     }
 
@@ -741,18 +746,6 @@
 
                     .img {
                         height: calc(80vw / 1.76) !important;
-                    }
-                }
-            }
-        }
-
-        .screens {
-            .gallery { 
-                section {
-                    width: 80vw !important;
-
-                    .img {
-                        height: calc(80vw / 1.35) !important;
                     }
                 }
             }

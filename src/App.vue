@@ -4,6 +4,9 @@
         <main>
            <router-view></router-view>
         </main>
+        <footer>
+            <a v-smooth-scroll:header><b>Top</b> <i class="far fa-arrow-alt-circle-up"></i></a>
+        </footer>
     </div>
 </template>
 
@@ -61,5 +64,21 @@
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center center;
+    }
+
+    footer {
+        color: $white;
+
+        b {
+            padding-right: 10px;
+        }
+        a {
+            position: fixed;
+            bottom: 0;
+            right: 50px;
+            background: $main-color;
+            padding: 10px 15px;
+            font-size: 20px;
+        }
     }
 </style>
