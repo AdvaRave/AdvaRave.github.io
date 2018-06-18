@@ -2,8 +2,8 @@
     <div class="gallery">
         <section>
             <div class="img" v-bind:style="{'background-image': 'url(\'' + images[selectedIndex].src + '\')'}" v-on:click="overlayDisplayed=true">
-                <a class="right" v-show="selectedIndex < images.length - 1" v-on:click="next" v-on:click.stop><i class="fa fa-chevron-circle-right"></i></a>
-                <a class="left" v-show="selectedIndex > 0" v-on:click="prev" v-on:click.stop><i class="fa fa-chevron-circle-left"></i></a>
+                <a class="right" v-show="selectedIndex < images.length - 1" v-on:click.stop="next"><i class="fa fa-chevron-circle-right"></i></a>
+                <a class="left" v-show="selectedIndex > 0" v-on:click.stop="prev"><i class="fa fa-chevron-circle-left"></i></a>
             </div>
             <ul v-show="images.length > 1">
                 <li class="img" v-for="(image, index) in images" v-lazy:background-image="image.src" v-on:click="selectedIndex=index">
@@ -30,11 +30,20 @@
             'overlay-gallery': overlayGallery
         },
         methods: {
+            preloadImage(imgIndex) {
+                if (imgIndex > images.length - 1 || imgIndex < 0) {
+                    return;
+                }
+
+                var img = new Image();
+                img.src = images[imgIndex];
+            },
             next: function() {
                 if (this.selectedIndex + 1 >= this.images.length - 1) {
                     this.selectedIndex = this.images.length - 1;
                 } else {
                     this.selectedIndex++;
+                    this.preloadImage(this.selectedIndex);
                 }
             },
             prev: function() {
@@ -42,9 +51,13 @@
                     this.selectedIndex = 0;
                 } else {
                     this.selectedIndex--;
+                    this.preloadImage(this.selectedIndex);
                 }
             }
-        }
+        },
+        mounted: function() {
+            this.preloadImage(this.selectedIndex + 1);
+        } 
     };
 </script>
 
@@ -96,6 +109,14 @@
                     background-size: cover;
                     border-radius: 10px;
                     cursor: pointer;
+
+                    &[lazy=loading] {
+                        &:before {
+                            top: calc(50% - 9px);
+                            left: calc(50% - 9px);
+                            font-size: 17px;
+                        }
+                    }
                 }
             }
         }
