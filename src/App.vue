@@ -94,6 +94,7 @@
                 top: calc(50% - 18px);
                 left: calc(50% - 18px);
                 font-size: 34px;
+                color: $main-color;
 
                 @keyframes move-up-down {
                     0% {
