@@ -1,7 +1,7 @@
 <template>
     <div class="gallery">
         <ul>
-            <li class="img" v-for="(image, index) in images" v-bind:style="{'background-image': 'url(\'' + image.src + '\')'}" v-on:click="openOverlay(index)">
+            <li class="img" v-for="(image, index) in images" v-lazy:background-image="image.src" v-on:click="openOverlay(index)">
             </li>
         </ul>
         <overlay-gallery v-bind:images="images" v-bind:selectedIndex="selectedIndex" v-show="overlayDisplayed" v-on:close="overlayDisplayed = false"></overlay-gallery>
