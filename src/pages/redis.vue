@@ -10,10 +10,6 @@
                 <li><a v-smooth-scroll:new-ui>New UI</a></li>
             </ul>
         </div>
-        <section class="p-preview">
-            <h2>Product Preview</h2>
-            <gallery v-bind:images="images.newUI"></gallery>   
-        </section>
         <section>
             <h2>Introduction</h2>
             <p>
@@ -22,6 +18,10 @@
                 and database-as-a-service, is trusted by over 8,500 enterprise customers.
 
             </p>
+        </section>
+        <section class="p-preview">
+            <h2>Product Preview</h2>
+            <selection-gallery v-bind:images="images.newUI"></selection-gallery>   
         </section>
         <section>
             <h2>UI Redesign</h2>
@@ -94,13 +94,10 @@
 
 <script>
     import selectionGallery from '../components/selectionGallery';
-    import gallery from '../components/gallery';
-
     export default {
         name: 'redis',
         components: {
-            'selection-gallery': selectionGallery,
-            'gallery': gallery
+            'selection-gallery': selectionGallery
         },
         data: function () {
             return {
@@ -112,16 +109,16 @@
                         {src: require('../assets/redis/new-flow.png')}
                     ],
                     oldUI: [
+                        {src: require('../assets/redis/old-ui/1a.jpg')},
                         {src: require('../assets/redis/old-ui/1.jpg')},
+                        {src: require('../assets/redis/old-ui/2a.jpg')},
                         {src: require('../assets/redis/old-ui/2.jpg')},
+                        {src: require('../assets/redis/old-ui/3a.jpg')},
                         {src: require('../assets/redis/old-ui/3.jpg')},
+                        {src: require('../assets/redis/old-ui/4a.jpg')},
                         {src: require('../assets/redis/old-ui/4.jpg')},
-                        {src: require('../assets/redis/old-ui/5.jpg')},
-                        {src: require('../assets/redis/old-ui/6.jpg')},
-                        {src: require('../assets/redis/old-ui/7.jpg')},
-                        {src: require('../assets/redis/old-ui/8.jpg')},
-                        {src: require('../assets/redis/old-ui/9.jpg')},
-                        {src: require('../assets/redis/old-ui/10.jpg')}
+                        {src: require('../assets/redis/old-ui/5a.jpg')},
+                        {src: require('../assets/redis/old-ui/5.jpg')}
                     ],
                     newUI: [
                         {src: require('../assets/redis/new-ui/1.jpg')},
@@ -244,6 +241,7 @@
     .main-flow {
         .gallery {
             padding: 40px 0 0 0;
+            text-align: center;
 
             section {
                 width: 700px;
@@ -259,6 +257,7 @@
     .new-flow {
         .gallery {
             padding: 20px 0 0 0;
+            text-align: center;
 
             section {
                 width: 900px;
@@ -274,13 +273,20 @@
     .old-ui {
         .gallery {
             padding: 40px 0 0 0;
+            text-align: center;
 
             section {
                 width: 900px;
 
-                div.img {
+                ul {
+                    text-align: left;
+                }
+
+                div.img { 
+                    background-size: cover;
+                    background-position: top;
                     width: 100%;
-                    height: 880px;
+                    height: 780px;
                 }
 
                 .fa {
@@ -290,12 +296,17 @@
         }
     }
 
-    .new-ui {
+    .new-ui, .p-preview {
         .gallery {
             padding: 20px 0 0 0;
+            text-align: center;
 
             section {
                 width: 900px;
+
+                ul {
+                    text-align: left;
+                }
 
                 div.img {
                     width: 100%;
@@ -309,13 +320,6 @@
         }
     }
 
-    .p-preview {
-        .gallery {
-            padding: 20px 0;
-        }
-    }
-
-
     @media only screen and (max-width: 1024px) {
         .main-flow {
             .gallery { 
@@ -324,17 +328,6 @@
 
                     .img {
                         height: calc(80vw / 2) !important;
-                    }
-                }
-            }
-        }
-
-        .p-preview {
-            .gallery {
-                ul {
-                    li {
-                        width: 260px !important;
-                        height: 260px !important;
                     }
                 }
             }
@@ -358,13 +351,13 @@
                     width: 80vw !important;
 
                     div.img {
-                        height: calc(80vw / 1.5) !important;
+                        height: calc(80vw / 1.1) !important;
                     }
                 }
             }
         }
 
-        .new-ui {
+        .new-ui, .p-preview {
             .gallery { 
                 section {
                     width: 80vw !important;

@@ -11,9 +11,17 @@
                 <li><a v-smooth-scroll:testing>User Testing</a></li>
             </ul>
         </div>
+        <section>
+            <h2>Introduction</h2>
+            <p>
+                Creojam is a DIY guides and marketplace platform and community that connects makers and businesses,<br>
+                by giving makers who want to create something the resources they need:<br>
+                Guides written by other makers, connected to the materials and tools provided by reliable businesses in a single convenient list.
+            </p>
+        </section>
         <section class="screens">
             <h2>Product Preview</h2>
-            <gallery v-bind:images="images.screens"></gallery>   
+            <selection-gallery v-bind:images="images.screens"></selection-gallery>   
         </section>
         <section>
             <h2>The Problem</h2>
@@ -153,7 +161,7 @@
                 <label>Business Users</label>
             </div>
         </section>
-        <section class="primary-persona">
+        <section id="primary-persona" class="primary-persona" v-bind:class="{expanded: personaExpanded}">
             <h2>Our Primary Persona</h2>
             <div class="horizontal">
                 <section class="left">
@@ -176,6 +184,7 @@
                     </ul>
                 </section>
             </div>
+            <a class="see-more" v-smooth-scroll:primary-persona v-on:click="personaExpanded=!personaExpanded">See {{personaExpanded ? 'Less': 'More'}}...</a>
             <section class="left">
                 <h6>Bio</h6>
                 <p>
@@ -270,11 +279,11 @@
         <section class="user-testing" id="testing">
             <h2>User Testing</h2>
             <p>
-                We did remote usability testing of the product with Hotjar and Google analytics in order to improve the product and match it to the user behaviour.<br>
+                We did remote usability testing of the product with Hotjar and Google analytics in order to improve the product and matched it to the user behaviour.<br>
                 We reviewed heat-maps, watched user sessions online, followed clicks and scrolls, and checked our user goals.
                 <br>After that we improved the product according to the tests results.
             </p>
-             <selection-gallery v-bind:images="images.userTesting"></selection-gallery>
+            <selection-gallery v-bind:images="images.userTesting"></selection-gallery>
         </section>
         <div class="end"><a class="button" href="https://www.creojam.com" target="_blank">Take me to Creojam</a></div>
     </article>
@@ -282,16 +291,15 @@
 
 <script>
     import selectionGallery from '../components/selectionGallery';
-    import gallery from '../components/gallery';
 
     export default {
         name: 'creojam',
         components: {
-            'selection-gallery': selectionGallery,
-            'gallery': gallery
+            'selection-gallery': selectionGallery
         },
         data: function () {
             return {
+                personaExpanded: false,
                 images: {
                     sitemap: [
                         {src: require('../assets/creojam/sitemap.png')}
@@ -303,13 +311,7 @@
                         {src: require('../assets/creojam/wireframes/3.jpg')},
                         {src: require('../assets/creojam/wireframes/4.jpg')},
                         {src: require('../assets/creojam/wireframes/5.jpg')},
-                        {src: require('../assets/creojam/wireframes/6.jpg')},
-                        {src: require('../assets/creojam/wireframes/7.jpg')},
-                        {src: require('../assets/creojam/wireframes/8.jpg')},
-                        {src: require('../assets/creojam/wireframes/9.jpg')},
-                        {src: require('../assets/creojam/wireframes/10.jpg')},
                         {src: require('../assets/creojam/wireframes/11.jpg')},
-                        {src: require('../assets/creojam/wireframes/12.jpg')},
                         {src: require('../assets/creojam/wireframes/13.jpg')},
                         {src: require('../assets/creojam/wireframes/a.jpg')},
                         {src: require('../assets/creojam/wireframes/b.jpg')},
@@ -327,7 +329,8 @@
                         {src: require('../assets/creojam/ui-guidelines.jpg')}
                     ],
                     userTesting: [
-                        {src: require('../assets/creojam/user-testing.jpg')}
+                        {src: require('../assets/creojam/user-testing.jpg')},
+                        {src: require('../assets/creojam/analytics.jpg')}
                     ],
                     screens: [
                         {src: require('../assets/creojam/preview/1.jpg')},
@@ -555,6 +558,9 @@
                 border-radius: 15px;
                 padding: 40px 200px 40px 40px;
                 margin-top: 20px;
+                height: 250px;
+                overflow: hidden;
+                position: relative;
 
                 h6 {
                     font-size: 18px;
@@ -562,6 +568,27 @@
 
                 p {
                     padding-top: 10px;
+                }
+
+                &.expanded {
+                    height: auto;
+
+                    .see-more {
+                        position: absolute;
+                        left: 40px;
+                        bottom: 15px;
+                    }
+                }
+
+                .see-more {
+                    display: inline-block;
+                    color: $creo-blue;
+                    font-size: 18px;
+                    padding-bottom: 10px;
+
+                    &:hover {
+                        font-weight: 700;
+                    }
                 }
 
                 .expertise {
@@ -633,9 +660,14 @@
 
             .primary-persona {
                 padding: 10% !important;
+                height: 600px !important;
 
                 .img {
                     margin: 20px 0 !important;
+                }
+
+                &.expanded {
+                    height: auto !important;
                 }
             }
 
@@ -698,13 +730,20 @@
     .wireframes {
         .gallery {
             padding: 40px 0 0 0;
+            text-align: center;
 
             section {
-                width: 680px;
+                width: 800px;
+
+                ul {
+                    text-align: left;
+                }
 
                 div.img {
+                    background-size: cover;
+                    background-position: top;
                     width: 100%;
-                    height: 910px;
+                    height: 800px;
                 }
 
                 .fa {
@@ -717,6 +756,7 @@
     .ui-guidelines {
         .gallery {
             padding: 40px 0 0 0;
+            text-align: center;
 
             section {
                 width: 1024px;
@@ -732,6 +772,7 @@
     .sitemap {
         .gallery {
             padding: 40px 0 0 0;
+            text-align: center;
 
             section {
                 width: 1024px;
@@ -746,20 +787,49 @@
 
     .screens {
         .gallery {
-            padding: 20px 0;
+            padding: 40px 0 0 0;
+            text-align: center;
+
+            section {
+                width: 800px;
+
+                ul {
+                    text-align: left;
+                }
+
+                div.img {
+                    background-size: cover;
+                    background-position: top;
+                    width: 100%;
+                    height: 800px;
+                }
+
+                .fa {
+                    color: $creo-blue;
+                }
+            }
         }
     }
 
     .user-testing {
         .gallery {
             padding: 40px 0 0 0;
+            text-align: center;
+
+            ul {
+                text-align: left;
+            }
 
             section {
                 width: 881px;
 
-                .img {
+                div.img {
                     width: 100%;
                     height: 418px;
+                }
+
+                .fa {
+                    color: $creo-blue;
                 }
             }
         }
@@ -769,21 +839,22 @@
         .wireframes {
             .gallery { 
                 section {
-                    width: 60vw !important;
+                    width: 80vw !important;
 
                     .img {
-                        height: calc(60vw * 1.4) !important;
+                        height: 80vw !important;
                     }
                 }
             }
         }
 
         .screens {
-            .gallery {
-                ul {
-                    li {
-                        width: 260px !important;
-                        height: 260px !important;
+            .gallery { 
+                section {
+                    width: 80vw !important;
+
+                    .img {
+                        height: 80vw !important;
                     }
                 }
             }
@@ -818,7 +889,7 @@
                 section {
                     width: 80vw !important;
 
-                    .img {
+                    div.img {
                         height: calc(80vw / 2) !important;
                     }
                 }

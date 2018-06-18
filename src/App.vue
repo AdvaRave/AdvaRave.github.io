@@ -5,7 +5,7 @@
            <router-view></router-view>
         </main>
         <footer>
-            <a v-smooth-scroll:header><b>Top</b> <i class="far fa-arrow-alt-circle-up"></i></a>
+            <a v-show="showTopButton" v-smooth-scroll:header><b>Top</b> <i class="far fa-arrow-alt-circle-up"></i></a>
         </footer>
     </div>
 </template>
@@ -15,8 +15,19 @@
 
     export default {
         name: 'app',
+        data: function() {
+            return {
+                showTopButton: false
+            };
+        },
         components: {
             'site-header': siteHeader
+        },
+        mounted: function() {
+            var that = this;
+            window.addEventListener('scroll', function() {
+                that.showTopButton = document.scrollingElement.scrollTop > 0;
+            });
         }
     };
 </script>
@@ -80,6 +91,8 @@
             background: $main-color;
             padding: 10px 15px;
             font-size: 20px;
+            border-top-right-radius: 7px;
+            border-top-left-radius: 7px;
         }
     }
 
