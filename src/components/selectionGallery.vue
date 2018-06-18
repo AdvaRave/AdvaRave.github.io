@@ -1,7 +1,7 @@
 <template>
     <div class="gallery">
         <section>
-            <div class="img" v-lazy:background-image="images[selectedIndex].src" v-on:click="overlayDisplayed=true">
+            <div class="img" v-bind:style="{'background-image': 'url(\'' + images[selectedIndex].src + '\')'}" v-on:click="overlayDisplayed=true">
                 <a class="right" v-show="selectedIndex < images.length - 1" v-on:click="next" v-on:click.stop><i class="fa fa-chevron-circle-right"></i></a>
                 <a class="left" v-show="selectedIndex > 0" v-on:click="prev" v-on:click.stop><i class="fa fa-chevron-circle-left"></i></a>
             </div>
