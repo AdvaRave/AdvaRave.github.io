@@ -11,7 +11,11 @@ import creojam from './pages/creojam';
 Vue.config.productionTip = false;
 Vue.use(VueRouter);
 Vue.use(vueSmoothScroll);
-Vue.use(VueLazyload);
+Vue.use(VueLazyload, {
+    preLoad: 1.4,
+    attempt: 1,
+    throttleWait: 50
+});
 
 
 const vueRouter = new VueRouter({

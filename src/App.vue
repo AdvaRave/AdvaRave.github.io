@@ -75,6 +75,36 @@
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center center;
+        position: relative;
+
+        &[lazy=loading] {
+            &:before {
+                font-family: Font Awesome\ 5 Free;
+                content: "\f110";
+                animation: a 1s infinite steps(8);
+                -moz-osx-font-smoothing: grayscale;
+                -webkit-font-smoothing: antialiased;
+                display: inline-block;
+                font-style: normal;
+                font-variant: normal;
+                text-rendering: auto;
+                line-height: 1;
+                font-weight: 900;
+                position: absolute;
+                top: calc(50% - 18px);
+                left: calc(50% - 18px);
+                font-size: 34px;
+
+                @keyframes move-up-down {
+                    0% {
+                        transform: rotate(0deg);
+                    }
+                    100% {
+                         transform: rotate(1turn);
+                    }
+                }
+            }
+        }
     }
 
     footer {
