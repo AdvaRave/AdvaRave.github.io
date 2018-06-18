@@ -43,7 +43,7 @@
                     this.selectedIndex = this.images.length - 1;
                 } else {
                     this.selectedIndex++;
-                    this.preloadImage(this.selectedIndex);
+                    this.preloadImage(this.selectedIndex + 1);
                 }
             },
             prev: function() {
@@ -51,7 +51,7 @@
                     this.selectedIndex = 0;
                 } else {
                     this.selectedIndex--;
-                    this.preloadImage(this.selectedIndex);
+                    this.preloadImage(this.selectedIndex + 1);
                 }
             }
         },
