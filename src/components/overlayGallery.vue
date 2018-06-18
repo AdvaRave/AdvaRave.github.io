@@ -73,6 +73,7 @@
             top: calc((100% - 60px) / 2);
             font-size: 50px;
             opacity: 0.6;
+            z-index: 2;
 
             &:hover {
                 opacity: 0.9;
