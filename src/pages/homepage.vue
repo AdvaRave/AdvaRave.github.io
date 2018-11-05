@@ -99,7 +99,7 @@
                         { src: require('../assets/drawings/face.jpg') },
                         { src: require('../assets/drawings/amigo.jpg') },
                         { src: require('../assets/drawings/cheetah.jpg') },
-                        { src: ''}
+                        { src: require('../assets/drawings/bunny.jpg')}
                     ]
                 }
             };

@@ -4,8 +4,11 @@
             <h1 class="img"></h1>
             <div><a class="button" href="https://myobligo.com/" target="_blank">Take me to Obligo</a></div>
             <ul>
-                <li><a v-smooth-scroll:market-research>Market Research</a></li>
+                <li><a v-smooth-scroll:m-research>Market Research</a></li>
                 <li><a v-smooth-scroll:personas>Personas</a></li>
+                <li><a v-smooth-scroll:management>Management</a></li>
+                <li><a v-smooth-scroll:tenant>Tenant</a></li>
+                <li><a v-smooth-scroll:marketing>Marketing</a></li>
             </ul>
         </div>
         <section>
@@ -25,7 +28,7 @@
                 They can keep their money in thier on account, while the landlord is allowed to bill the tenant for damages in a limited and secure way.
             </p>
         </section>
-        <section class="m-research">
+        <section class="m-research" id="m-research">
             <h2>Market Research</h2>
             <p>
                 I checked out our competition, looking at Hi-Tech companies in the real-estate field and the services they offer.
@@ -155,6 +158,24 @@
                 </section>
             </div>
         </section>
+        <section class="management" id="management">
+            <h2>Management Platform</h2>
+            <p>
+            </p>
+            <selection-gallery v-bind:images="images.management"></selection-gallery>
+        </section>
+        <section class="tenant" id="tenant">
+            <h2>Tenant Platform</h2>
+            <p>
+            </p>
+            <selection-gallery v-bind:images="images.tenant"></selection-gallery>
+        </section>
+        <section class="marketing" id="marketing">
+            <h2>Marketing</h2>
+            <p>
+            </p>
+            <selection-gallery v-bind:images="images.marketing"></selection-gallery>
+        </section>
     </article>
 </template>
 
@@ -172,7 +193,43 @@
                 images: {
                     marketResearch: [
                         {src: require('../assets/obligo/m-research.jpg')}
-                    ]
+                    ],
+                    marketing: [
+                        {src: require('../assets/obligo/marketing/1.png')},
+                        {src: require('../assets/obligo/marketing/2.png')},
+                        {src: require('../assets/obligo/marketing/3.png')},
+                        {src: require('../assets/obligo/marketing/4.png')}
+                    ],
+                    management: [
+                        {src: require('../assets/obligo/management/1.png')},
+                        {src: require('../assets/obligo/management/2.png')},
+                        {src: require('../assets/obligo/management/3.png')},
+                        {src: require('../assets/obligo/management/4.png')},
+                        {src: require('../assets/obligo/management/5.png')},
+                        {src: require('../assets/obligo/management/6.png')},
+                        {src: require('../assets/obligo/management/7.png')}
+                    ],
+                    tenant: [
+                        {src: require('../assets/obligo/tenant/1.png')},
+                        {src: require('../assets/obligo/tenant/2.png')},
+                        {src: require('../assets/obligo/tenant/3.png')},
+                        {src: require('../assets/obligo/tenant/4.png')},
+                        {src: require('../assets/obligo/tenant/5.png')},
+                        {src: require('../assets/obligo/tenant/6.png')},
+                        {src: require('../assets/obligo/tenant/7.png')},
+                        {src: require('../assets/obligo/tenant/8.png')},
+                        {src: require('../assets/obligo/tenant/9.png')},
+                        {src: require('../assets/obligo/tenant/10.png')},
+                        {src: require('../assets/obligo/tenant/11.png')},
+                        {src: require('../assets/obligo/tenant/12.png')},
+                        {src: require('../assets/obligo/tenant/13.png')},
+                        {src: require('../assets/obligo/tenant/14.png')},
+                        {src: require('../assets/obligo/tenant/15.png')},
+                        {src: require('../assets/obligo/tenant/16.png')},
+                        {src: require('../assets/obligo/tenant/17.png')},
+                        {src: require('../assets/obligo/tenant/18.png')},
+                        {src: require('../assets/obligo/tenant/19.png')}
+                    ],
                 }
             };
         }
@@ -266,6 +323,10 @@
                 font-style: italic;
             }
 
+            &.management {
+                padding-top: 40px;
+            }
+
             &.personas {
                 > div {
                     label {
@@ -340,7 +401,7 @@
             &.primary-persona {
                 border: 2px solid $obligo-pink;
                 border-radius: 15px;
-                padding: 40px 200px 40px 40px;
+                padding: 40px 200px 65px 40px;
                 margin-top: 20px;
                 height: 250px;
                 overflow: hidden;
@@ -523,6 +584,34 @@
         }
     }
 
+    .tenant, 
+    .management, 
+    .marketing {
+        .gallery {
+            padding: 40px 0 0 0;
+            text-align: center;
+
+            section {
+                width: 900px;
+
+                ul {
+                    text-align: left;
+                }
+
+                div.img {
+                    background-size: cover;
+                    background-position: top;
+                    width: 100%;
+                    height: 600px;
+                }
+
+                .fa {
+                    color: $obligo-pink;
+                }
+            }
+        }
+    }
+
     @media only screen and (max-width: 1024px) {
         .m-research {
             .gallery { 
@@ -531,6 +620,20 @@
 
                     .img {
                         height: calc(80vw / 2.2) !important;
+                    }
+                }
+            }
+        }
+
+        .tenant, 
+        .management, 
+        .marketing {
+            .gallery { 
+                section {
+                    width: 80vw !important;
+
+                    .img {
+                        height: 80vw !important;
                     }
                 }
             }
