@@ -31,12 +31,12 @@
         },
         methods: {
             preloadImage(imgIndex) {
-                if (imgIndex > images.length - 1 || imgIndex < 0) {
+                if (imgIndex > this.images.length - 1 || imgIndex < 0) {
                     return;
                 }
 
                 var img = new Image();
-                img.src = images[imgIndex];
+                img.src = this.images[imgIndex];
             },
             next: function() {
                 if (this.selectedIndex + 1 >= this.images.length - 1) {

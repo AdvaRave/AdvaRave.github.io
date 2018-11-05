@@ -24,6 +24,14 @@
                     <div class="project-image img"></div>
                     <router-link to="/creojam" class="button">Read More</router-link>
                 </li>
+                <li class="obligo">
+                    <div class="logo img"></div>
+                    <p>
+                        Obligo allows tenants to give billing authorization<br> as an alternative to security deposits to landlords.
+                    </p>
+                    <div class="project-image img"></div>
+                    <router-link to="/obligo" class="button">Read More</router-link>
+                </li>
                 <li class="redis">
                     <div class="logo img"></div>
                     <p>
@@ -217,6 +225,16 @@
 
                     .project-image {
                         background-image: url('../assets/homepage/redislabs-mockup.png');
+                    }
+                }
+
+                &.obligo {
+                    .logo {
+                        background-image: url('../assets/homepage/obligo.png');
+                    }
+
+                    .project-image {
+                        background-image: url('../assets/homepage/obligo-mockup.png');
                     }
                 }
             }

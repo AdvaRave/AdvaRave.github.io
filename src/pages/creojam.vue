@@ -216,7 +216,7 @@
             </div>
             <div class="horizontal">
                  <section class="left">
-                    <h6>Motivations</h6>
+                    <h6>Goals</h6>
                     <ul>
                         <li>Keeping her target audience updated</li>
                         <li>Staying relevant</li>

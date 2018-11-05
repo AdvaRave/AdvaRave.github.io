@@ -190,10 +190,6 @@
                 padding-bottom: 20px;
             }
 
-            p {
-                
-            }
-
             ul {
                 padding: 20px 0;
 

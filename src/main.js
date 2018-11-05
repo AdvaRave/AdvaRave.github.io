@@ -2,11 +2,12 @@ import Vue from 'vue';
 import App from './App.vue';
 import VueRouter from 'vue-router';
 import vueSmoothScroll from './directives/smooth-scroll';
-import VueLazyload from 'vue-lazyload'
+import VueLazyload from 'vue-lazyload';
 
 import homepage from './pages/homepage';
 import redis from './pages/redis';
 import creojam from './pages/creojam';
+import obligo from './pages/obligo';
 
 Vue.config.productionTip = false;
 Vue.use(VueRouter);
@@ -17,12 +18,21 @@ Vue.use(VueLazyload, {
     throttleWait: 50
 });
 
-
 const vueRouter = new VueRouter({
     routes: [
         { path: '/', component: homepage },
         { path: '/creojam', component: creojam },
-        { path: '/redis', component: redis }
+        { path: '/redis', component: redis },
+        { path: '/obligo', 
+          component: obligo,  
+          beforeEnter: (to, from, next) => {
+            const pass = window.prompt('This area is confidential! Please enter the password:');
+            if (pass != 'obligo098') {
+                alert('Wrong password...');
+            } else {
+                next();
+            }
+        }}
     ],
     scrollBehavior: function (to, from, savedPosition) {
         if (savedPosition) {
