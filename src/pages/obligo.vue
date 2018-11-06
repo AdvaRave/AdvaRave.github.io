@@ -585,14 +585,13 @@
     }
 
     .tenant, 
-    .management, 
-    .marketing {
+    .management {
         .gallery {
             padding: 40px 0 0 0;
             text-align: center;
 
             section {
-                width: 900px;
+                width: 1024px;
 
                 ul {
                     text-align: left;
@@ -602,7 +601,33 @@
                     background-size: cover;
                     background-position: top;
                     width: 100%;
-                    height: 600px;
+                    height: 575px;
+                }
+
+                .fa {
+                    color: $obligo-pink;
+                }
+            }
+        }
+    }
+
+    .marketing {
+        .gallery {
+            padding: 40px 0 0 0;
+            text-align: center;
+
+            section {
+                width: 1024px;
+
+                ul {
+                    text-align: left;
+                }
+
+                div.img {
+                    background-size: cover;
+                    background-position: top;
+                    width: 100%;
+                    height: 300px;
                 }
 
                 .fa {
@@ -626,14 +651,25 @@
         }
 
         .tenant, 
-        .management, 
+        .management {
+            .gallery { 
+                section {
+                    width: 80vw !important;
+
+                    .img {
+                        height: calc(80vw / 1.78) !important;
+                    }
+                }
+            }
+        }
+ 
         .marketing {
             .gallery { 
                 section {
                     width: 80vw !important;
 
                     .img {
-                        height: 80vw !important;
+                        height: calc(80vw / 3.47) !important;
                     }
                 }
             }
