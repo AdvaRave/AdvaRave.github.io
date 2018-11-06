@@ -158,21 +158,39 @@
                 </section>
             </div>
         </section>
+        <section class="user-flows" id="user-flows">
+            <h2>User Flows</h2>
+            <p>
+                I documented the user flows offline and online in order to get a better understanding of the process.<br>
+                The sum-up of the user flows:
+            </p>
+            <h3>Leasing agents</h3>
+            <selection-gallery v-bind:images="images.leasingFlow"></selection-gallery>
+            <h3>Tenants</h3>
+            <selection-gallery v-bind:images="images.tenantFlow"></selection-gallery>
+        </section>
         <section class="management" id="management">
             <h2>Management Platform</h2>
             <p>
+                This platform is in use by the leasing agents.<br>
+                The leasing agents send an Obligo request and a rent advance request.<br>
+                They can also monitor where the tenant is within the process, and see the status of the invitations.
             </p>
             <selection-gallery v-bind:images="images.management"></selection-gallery>
         </section>
         <section class="tenant" id="tenant">
             <h2>Tenant Platform</h2>
             <p>
+                The tenant usually visits the platform 2-3 times.<br>
+                The tenant has a long onboarding process where he fills his personal details,<br> 
+                gives sensitive information (so Obligo can vouch for him) and pays.
             </p>
             <selection-gallery v-bind:images="images.tenant"></selection-gallery>
         </section>
         <section class="marketing" id="marketing">
             <h2>Marketing</h2>
             <p>
+                Emails used for marketing purposes.
             </p>
             <selection-gallery v-bind:images="images.marketing"></selection-gallery>
         </section>
@@ -193,6 +211,12 @@
                 images: {
                     marketResearch: [
                         {src: require('../assets/obligo/m-research.jpg')}
+                    ],
+                    leasingFlow: [
+                        {src: require('../assets/obligo/flows/flow1.png')}
+                    ],
+                    tenantFlow: [
+                        {src: require('../assets/obligo/flows/flow2.png')}
                     ],
                     marketing: [
                         {src: require('../assets/obligo/marketing/1.png')},
@@ -229,7 +253,7 @@
                         {src: require('../assets/obligo/tenant/17.png')},
                         {src: require('../assets/obligo/tenant/18.png')},
                         {src: require('../assets/obligo/tenant/19.png')}
-                    ],
+                    ]
                 }
             };
         }
@@ -321,6 +345,14 @@
 
             &.quotes {
                 font-style: italic;
+            }
+
+            &.user-flows {
+                padding-top: 50px;
+
+                h3 {
+                    padding: 15px 0;
+                }
             }
 
             &.management {
@@ -584,6 +616,22 @@
         }
     }
 
+    .user-flows {
+        .gallery {
+            padding: 20px 0 0 0;
+            text-align: left;
+
+            section {
+                width: 415px;
+
+                .img {
+                    width: 100%;
+                    height: 143px;
+                }
+            }
+        }
+    }
+
     .tenant, 
     .management {
         .gallery {
@@ -645,6 +693,18 @@
 
                     .img {
                         height: calc(80vw / 2.2) !important;
+                    }
+                }
+            }
+        }
+
+        .user-flows {
+            .gallery { 
+                section {
+                    width: 80vw !important;
+
+                    .img {
+                        height: calc(80vw / 1.9) !important;
                     }
                 }
             }
