@@ -30,7 +30,7 @@
             'overlay-gallery': overlayGallery
         },
         methods: {
-            preloadImage(imgIndex) {
+            preloadImage: function(imgIndex) {
                 if (imgIndex > this.images.length - 1 || imgIndex < 0) {
                     return;
                 }

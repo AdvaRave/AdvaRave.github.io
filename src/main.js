@@ -3,6 +3,7 @@ import App from './App.vue';
 import VueRouter from 'vue-router';
 import vueSmoothScroll from './directives/smooth-scroll';
 import VueLazyload from 'vue-lazyload';
+import sha256 from 'js-sha256';
 
 import homepage from './pages/homepage';
 import redis from './pages/redis';
@@ -27,7 +28,7 @@ const vueRouter = new VueRouter({
           component: obligo,  
           beforeEnter: (to, from, next) => {
             const pass = window.prompt('This area is confidential! Please enter the password:');
-            if (pass != 'obligo098') {
+            if (sha256(pass) != 'cb11563ccb19f5fb1fa7ece64674c50794db994f5a9804c350ebcf4a4a4ee71d') {
                 alert('Wrong password...');
             } else {
                 next();
