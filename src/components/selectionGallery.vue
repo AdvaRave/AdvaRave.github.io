@@ -1,5 +1,5 @@
 <template>
-    <div class="gallery">
+    <div class="gallery" v-bind:class="{inline: inline}">
         <section>
             <div class="img" v-bind:style="{'background-image': 'url(\'' + images[selectedIndex].src + '\')'}" v-on:click="overlayDisplayed=true">
                 <a class="right" v-show="selectedIndex < images.length - 1" v-on:click.stop="next"><i class="fa fa-chevron-circle-right"></i></a>
@@ -25,7 +25,7 @@
                 selectedIndex: 0
             };
         },
-        props: ['images'],
+        props: ['images', 'inline'],
         components: {
             'overlay-gallery': overlayGallery
         },
@@ -66,6 +66,45 @@
 
     .gallery {
         padding: 40px;
+
+        &.inline {
+            padding: 0;
+
+            section {
+                background: $main-light;
+                width: 300px;
+                border-radius: 10px;
+                padding: 40px 0;
+
+                > div {
+                    height: 220px;
+                    background-size: contain;
+
+                    a {
+                        font-size: 32px;
+                        display: none;
+
+                        &.right {
+                            right: 15px;
+                        }
+
+                        &.left {
+                            left: 15px;
+                        }
+                    }
+
+                    &:hover {
+                        a {
+                            display: inline-block;
+                        }
+                    }
+                }
+
+                ul {
+                    display: none;
+                }
+            }   
+        }
 
         section {
             width: 800px;
