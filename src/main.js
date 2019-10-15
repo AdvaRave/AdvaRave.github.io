@@ -24,16 +24,7 @@ const vueRouter = new VueRouter({
         { path: '/', component: homepage },
         { path: '/creojam', component: creojam },
         { path: '/redis', component: redis },
-        { path: '/obligo', 
-          component: obligo,  
-          beforeEnter: (to, from, next) => {
-            const pass = window.prompt('This area is confidential! Please enter the password:');
-            if (sha256(pass) != 'cb11563ccb19f5fb1fa7ece64674c50794db994f5a9804c350ebcf4a4a4ee71d') {
-                alert('Wrong password...');
-            } else {
-                next();
-            }
-        }}
+        { path: '/obligo', component: obligo }
     ],
     scrollBehavior: function (to, from, savedPosition) {
         if (savedPosition) {
@@ -41,6 +32,15 @@ const vueRouter = new VueRouter({
         } else {
             return { x: 0, y: 0 };
         }
+    }
+});
+
+vueRouter.beforeEach((to, from, next) => {
+    const pass = window.prompt('This area is confidential! Please enter the password:');
+    if (sha256(pass) != '6518275099ac33dde1d89bae039ab2d15d717f6b7212938d59d085e2635452f0') {
+        alert('Wrong password...');
+    } else {
+        next();
     }
 });
 
