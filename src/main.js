@@ -37,7 +37,7 @@ const vueRouter = new VueRouter({
 
 vueRouter.beforeEach((to, from, next) => {
     const pass = window.prompt('This area is confidential! Please enter the password:');
-    if (sha256(pass) != '6518275099ac33dde1d89bae039ab2d15d717f6b7212938d59d085e2635452f0') {
+    if (sha256(pass) != 'f6bcac77d2819e32ed528f2b939a62e54461082f489ea10aa47741d91e468211') {
         alert('Wrong password...');
     } else {
         next();
