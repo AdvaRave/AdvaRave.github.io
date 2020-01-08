@@ -4,7 +4,7 @@
             <router-link to="/" class="logo"></router-link>
             <ul>
                 <li>
-                    <a href="/" v-smooth-scroll:projects>Latest Projects</a>
+                    <a href="/" v-smooth-scroll:projects>Projects</a>
                 </li>
                 <li class="seperator"></li>
                 <li><a href="https://www.linkedin.com/in/adva-rave-00281596" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
@@ -25,24 +25,25 @@
     @import "../styles/globals.scss";
 
     header {
+        position: relative;
+        z-index: 999;
+
         nav {
-            background: $main-color;
             overflow: hidden;
             padding: 15px;
-            color: $white;
+            color: $main-color;
+            box-shadow: 0 4px 12px 0 $border-gray;
 
             .logo {
-                display: inline-block;
                 float: left;
                 width: 0; 
                 height: 0; 
                 border-left: 10px solid transparent;
                 border-right: 10px solid transparent;
-                border-bottom: 20px solid $white;
+                border-bottom: 20px solid $main-color;
             }
 
             ul {
-                display: inline-block;
                 float: right;
 
                 li {
@@ -50,7 +51,7 @@
                     padding: 0 10px;
 
                     &.seperator {
-                        border-left: 2px solid $white;
+                        border-left: 2px solid $border-gray;
                         height: 23px;
                         padding: 0;
                         margin: 0 10px 0 7px;

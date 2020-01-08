@@ -35,14 +35,14 @@ const vueRouter = new VueRouter({
     }
 });
 
-vueRouter.beforeEach((to, from, next) => {
+/*vueRouter.beforeEach((to, from, next) => {
     const pass = window.prompt('This area is confidential! Please enter the password:');
     if (sha256(pass) != 'f6bcac77d2819e32ed528f2b939a62e54461082f489ea10aa47741d91e468211') {
         alert('Wrong password...');
     } else {
         next();
     }
-});
+});*/
 
 new Vue({
     render: h => h(App),

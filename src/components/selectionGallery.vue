@@ -6,7 +6,7 @@
                 <a class="left" v-show="selectedIndex > 0" v-on:click.stop="prev"><i class="fa fa-chevron-circle-left"></i></a>
             </div>
             <ul v-show="images.length > 1">
-                <li class="img" v-for="(image, index) in images" v-lazy:background-image="image.src" v-on:click="selectedIndex=index">
+                <li class="img" v-for="(image, index) in images" :key="index" v-lazy:background-image="image.src" v-on:click="selectedIndex=index">
                 </li>
             </ul>
         </section>

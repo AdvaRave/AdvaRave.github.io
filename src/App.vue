@@ -5,7 +5,7 @@
            <router-view></router-view>
         </main>
         <footer>
-            <a v-show="showTopButton" v-smooth-scroll:header><b>Top</b> <i class="far fa-arrow-alt-circle-up"></i></a>
+            <a v-show="showTopButton" v-smooth-scroll:header><i class="fas fa-chevron-up"></i></a>
         </footer>
     </div>
 </template>
@@ -38,7 +38,7 @@
     body {
         font-family: 'Nunito', sans-serif;
         font-size: 16px;
-        font-color: $text-default;
+        color: $text-default;
     }
 
     main {
@@ -109,7 +109,7 @@
     }
 
     footer {
-        color: $white;
+        color: $main-color;
 
         b {
             padding-right: 10px;
@@ -119,11 +119,12 @@
             position: fixed;
             bottom: 0;
             right: 50px;
-            background: $main-color;
-            padding: 10px 15px;
+            bottom: 50px;
+            padding: 15px 20px;
+            background: $white;
             font-size: 20px;
-            border-top-right-radius: 7px;
-            border-top-left-radius: 7px;
+            box-shadow: 0 2px 10px 0 $border-gray;
+            border-radius: 50%;
         }
     }
 
