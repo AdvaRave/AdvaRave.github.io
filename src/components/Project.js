@@ -145,6 +145,10 @@ const PersonSelector = styled.div`
   button {
     color: ${props => props.theme.colors.prefixBlue};
     text-align: left;
+
+    &:not([selected]) {
+      opacity: 1;
+    }
   }
 
   @media only screen and (max-width: 1024px) {
@@ -227,7 +231,7 @@ const Section = ({id, sub, type, title, text, images, mainPersonas, secondaryPer
               <ul>
                 {mainPersonas.map((p, index) => (
                 <li key={index}>
-                  <button onClick={() => setCurrentPersona(p)}>{p}</button>
+                  <button onClick={() => setCurrentPersona(p)} selected={p === currentPersona}>{p}</button>
                 </li>))}
               </ul>
             </PersonSelector>
@@ -236,7 +240,7 @@ const Section = ({id, sub, type, title, text, images, mainPersonas, secondaryPer
               <ul>
                 {secondaryPersonas.map((p, index) => (
                 <li key={index}>
-                  <button onClick={() => setCurrentPersona(p)}>{p}</button>
+                  <button onClick={() => setCurrentPersona(p)} selected={p === currentPersona}>{p}</button>
                 </li>))}
               </ul>
             </PersonSelector>}

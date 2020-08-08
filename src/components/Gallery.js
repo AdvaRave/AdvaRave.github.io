@@ -65,11 +65,14 @@ const SelectedImage = styled.img`
 
 const ImageDescription = styled.p`
     position: absolute;
-    bottom: 0;
     left: 0;
     padding: 20px;
     background: ${props => props.theme.colors.backgroundBlueOpaque};
     text-align: left;
+    
+    ${props => props.descriptionPosition === 'top' ? `
+     top: 0;`: `bottom: 0;
+    `}
 `;
 
 const NextImage = styled.a`
@@ -170,7 +173,7 @@ const Gallery = ({images}) => {
                 {fullScreen && <ExitFullScreen onClick={() => setFullScreen(false)}><FontAwesomeIcon icon={faTimes} /></ExitFullScreen>}
                 {selectedImageIndex - 1 >= 0 && <PrevImage onClick={() => setSelectedImageIndex(selectedImageIndex-1)}><FontAwesomeIcon icon={faChevronLeft} /></PrevImage>}
                 {selectedImageIndex + 1 < images.length && <NextImage onClick={() => setSelectedImageIndex(selectedImageIndex+1)}><FontAwesomeIcon icon={faChevronRight} /></NextImage>}
-                {images[selectedImageIndex].description && <ImageDescription dangerouslySetInnerHTML={{__html: images[selectedImageIndex].description}}></ImageDescription>}
+                {images[selectedImageIndex].description && <ImageDescription dangerouslySetInnerHTML={{__html: images[selectedImageIndex].description}} descriptionPosition={images[selectedImageIndex].descriptionPosition}></ImageDescription>}
             </SelectedImageContainer>
             {images.length > 1 && <ImageList>
                 {images.map((image, index) => (

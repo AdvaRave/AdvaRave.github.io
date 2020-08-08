@@ -10,7 +10,7 @@ import HomeMain from '../images/home/home-main.png';
 const Intro = styled.div`
   text-align: center;
   height: calc(100vh - 180px);
-  color: ${props => props.theme.colors.headerLightBlue};
+  color: ${props => props.theme.colors.headerDarkBlue};
   position: relative;
   display: flex;
   flex-wrap: wrap;
@@ -40,7 +40,7 @@ const MainImage = styled.div`
   height: 293px;
   width: 320px;
   margin-right: 80px;
-  box-shadow: -15px -13px 0 ${props => props.theme.colors.headerLightBlue};
+  box-shadow: -15px -13px 0 ${props => props.theme.colors.headerDarkBlue};
 
   animation: appear 0.5s ease-in;
   animation-fill-mode: forwards;

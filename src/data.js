@@ -92,8 +92,8 @@ import Timeline3 from './images/kaudit/timeline/3.png';
 import Timeline4 from './images/kaudit/timeline/4.png';
 
 // Creojam
-import Creojam from './images/creojam/creojam.jpg';
-import CreojamHome from './images/creojam/creojam-home.png';
+import Creojam from './images/creojam/creojam.png';
+import CreojamHome from './images/creojam/creojam-home.jpg';
 import Sitemap from './images/creojam/sitemap.png';
 import UserTesting1 from './images/creojam/user-testing/user-testing1.jpg';
 import UserTesting2 from './images/creojam/user-testing/user-testing2.jpg';
@@ -102,13 +102,14 @@ import Hometalk from './images/creojam/swot/hometalk.png';
 import Snapguide from './images/creojam/swot/snapguide.png';
 import Users1 from './images/creojam/users/users1.png';
 import Users2 from './images/creojam/users/users2.png';
-// import CreoDesign1 from './images/creojam/design/1.png';
-// import CreoDesign2 from './images/creojam/design/2.png';
-// import CreoDesign3 from './images/creojam/design/3.png';
-// import CreoDesign4 from './images/creojam/design/4.png';
-// import CreoDesign5 from './images/creojam/design/5.png';
-// import CreoDesign6 from './images/creojam/design/6.png';
-// import CreoDesign7 from './images/creojam/design/7.png';
+import CreoDesign1 from './images/creojam/design/1.jpg';
+import CreoDesign2 from './images/creojam/design/2.jpg';
+import CreoDesign3 from './images/creojam/design/3.jpg';
+import CreoDesign4 from './images/creojam/design/4.jpg';
+import CreoDesign5 from './images/creojam/design/5.jpg';
+import CreoDesign6 from './images/creojam/design/6.jpg';
+import CreoDesign7 from './images/creojam/design/7.jpg';
+import CreoDesign8 from './images/creojam/design/8.jpg';
 
 export default {
     personas: {
@@ -985,22 +986,25 @@ export default {
                 },
                 {
                     title: "Competitors SWOT Analysis",
-                    text: `I've prepared a SWOT analysis of out top 3 competitors:<br/><br/>
+                    text: `I've prepared a SWOT analysis of our top 3 competitors:<br/><br/>
                     •&nbsp; Instructables<br/>
                     •&nbsp; Hometalk<br/>
                     •&nbsp; Snapguide<br/>`,
                     images: [
                         {
                             src: Instructables,
-                            description: "Instructables"
+                            description: "Instructables",
+                            descriptionPosition: "top"
                         },
                         {
                             src: Hometalk,
-                            description: "Hometalk"
+                            description: "Hometalk",
+                            descriptionPosition: "top"
                         },
                         {
                             src: Snapguide,
-                            description: "Snapguide"
+                            description: "Snapguide",
+                            descriptionPosition: "top"
                         },
                     ],
                     sub: true
@@ -1091,6 +1095,30 @@ export default {
                     title: "Product Design",
                     text: ``,
                     images: [
+                        {
+                            src: CreoDesign1
+                        },
+                        {
+                            src: CreoDesign2
+                        },
+                        {
+                            src: CreoDesign3
+                        },
+                        {
+                            src: CreoDesign4
+                        },
+                        {
+                            src: CreoDesign5
+                        },
+                        {
+                            src: CreoDesign6
+                        },
+                        {
+                            src: CreoDesign7
+                        },
+                        {
+                            src: CreoDesign8
+                        }
                     ],
                     sub: true
                 },
