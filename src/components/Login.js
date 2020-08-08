@@ -5,11 +5,10 @@ import sha256 from 'js-sha256';
 export const key = 'portfolioLoggedIn';
 export const hashed = 'cc258ff59ed827dce11cef3fe8c3330f1e7073d09aec5ca0bac6647a2cad0210'; // simpleton impl. just to prevent the "non-tech" visitors
 const StyledLogin = styled.div`
-   text-align: center;
+    text-align: center;
+    padding: 120px 40px 0 40px;
 
-   
     h2 {
-       padding-top: 100px;
        font-size: 30px;
        line-height: 40px;
        color: ${props => props.theme.colors.headerDarkBlue};

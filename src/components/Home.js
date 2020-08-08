@@ -53,6 +53,8 @@ const MainImage = styled.div`
 
   @media only screen and (max-width: 1024px) {
     margin-right: 0;
+    height: 257px;
+    width: 280px;
   }
 `;
 
