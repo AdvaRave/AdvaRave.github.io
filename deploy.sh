@@ -5,7 +5,7 @@ git add .
 git commit -am "update dist"
 git push origin dev
 
-cp -R dist dist_temp
+cp -R build dist_temp
 git checkout master
 git pull origin master
 shopt -s extglob
