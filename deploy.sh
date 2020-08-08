@@ -1,6 +1,6 @@
 #!/bin/bash
 
-npm run build
+yarn build
 git add .
 git commit -am "update dist"
 git push origin dev
