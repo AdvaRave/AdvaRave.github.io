@@ -211,7 +211,7 @@ const Persona = ({name, image, sections}) => {
   );
 };
 
-const Section = ({id, sub, type, title, text, images, mainPersonas, secondaryPersonas, personas}) => {
+const Section = ({id, sub, type, title, text, images, galleryBorder, mainPersonas, secondaryPersonas, personas}) => {
   const [currentPersona, setCurrentPersona] = useState(mainPersonas?.[0]);
 
   return (
@@ -220,7 +220,7 @@ const Section = ({id, sub, type, title, text, images, mainPersonas, secondaryPer
       <p dangerouslySetInnerHTML={{__html: text}}></p>
       {images.length > 0 && 
       <StyledImageGallery>
-        <Gallery images={images}/>
+        <Gallery images={images} border={galleryBorder}/>
       </StyledImageGallery>}
 
       {type === 'persona' && 

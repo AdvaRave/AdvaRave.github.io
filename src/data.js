@@ -13,13 +13,10 @@ import Results1 from './images/advisor/results/1.png';
 import Results2 from './images/advisor/results/2.png';
 import Results3 from './images/advisor/results/3.png';
 import Results4 from './images/advisor/results/4.png';
-import Results5 from './images/advisor/results/5.png';
 import Results6 from './images/advisor/results/6.png';
 import Results7 from './images/advisor/results/7.png';
 import Results8 from './images/advisor/results/8.png';
 import Results9 from './images/advisor/results/9.png';
-import Results10 from './images/advisor/results/10.png';
-import Results11 from './images/advisor/results/11.jpg';
 import ContResults1 from './images/advisor/cont-advisor/1.jpg';
 import ContResults2 from './images/advisor/cont-advisor/2.jpg';
 import ContResults3 from './images/advisor/cont-advisor/3.jpg';
@@ -63,7 +60,6 @@ import Design5 from './images/runtime/design/5.jpg';
 import Design6 from './images/runtime/design/6.jpg';
 import Design7 from './images/runtime/design/7.jpg';
 import Design8 from './images/runtime/design/8.jpg';
-import Design9 from './images/runtime/design/9.jpg';
 import Option1 from './images/runtime/design/option1.jpg';
 import Option2 from './images/runtime/design/option2.jpg';
 
@@ -78,6 +74,7 @@ import TimelineWF3 from './images/kaudit/timeline-wf/3.png';
 import RulesWF1 from './images/kaudit/rules-wf/1.png';
 import RulesWF2 from './images/kaudit/rules-wf/2.png';
 import RulesWF3 from './images/kaudit/rules-wf/3.png';
+import Brainstorm from './images/kaudit/rules/brainstorm.png';
 import Rules1 from './images/kaudit/rules/1.png';
 import Rules2 from './images/kaudit/rules/2.png';
 import Rules3 from './images/kaudit/rules/3.png';
@@ -100,16 +97,19 @@ import UserTesting2 from './images/creojam/user-testing/user-testing2.jpg';
 import Instructables from './images/creojam/swot/instructables.png';
 import Hometalk from './images/creojam/swot/hometalk.png';
 import Snapguide from './images/creojam/swot/snapguide.png';
+import Competitors from './images/creojam/swot/competitors.png';
 import Users1 from './images/creojam/users/users1.png';
 import Users2 from './images/creojam/users/users2.png';
-import CreoDesign1 from './images/creojam/design/1.jpg';
-import CreoDesign2 from './images/creojam/design/2.jpg';
-import CreoDesign3 from './images/creojam/design/3.jpg';
-import CreoDesign4 from './images/creojam/design/4.jpg';
-import CreoDesign5 from './images/creojam/design/5.jpg';
-import CreoDesign6 from './images/creojam/design/6.jpg';
-import CreoDesign7 from './images/creojam/design/7.jpg';
-import CreoDesign8 from './images/creojam/design/8.jpg';
+import CreoDesign1 from './images/creojam/design/1.png';
+import CreoDesign2 from './images/creojam/design/2.png';
+import CreoDesign3 from './images/creojam/design/3.png';
+import CreoDesign4 from './images/creojam/design/4.png';
+import CreoDesign5 from './images/creojam/design/5.png';
+import CreoDesign6 from './images/creojam/design/6.png';
+import CreoDesign7 from './images/creojam/design/7.png';
+import CreoDesign8 from './images/creojam/design/8.png';
+import CreoDesign9 from './images/creojam/design/9.png';
+import CreoDesign10 from './images/creojam/design/10.png';
 
 export default {
     personas: {
@@ -455,9 +455,6 @@ export default {
                             src: Results4
                         },
                         {
-                            src: Results5
-                        },
-                        {
                             src: Results6
                         },
                         {
@@ -468,13 +465,7 @@ export default {
                         },
                         {
                             src: Results9
-                        },
-                        {
-                            src: Results10
-                        },
-                        {
-                            src: Results11
-                        }    
+                        }   
                     ]
                 },
                 {
@@ -757,9 +748,6 @@ export default {
                         },
                         {
                             src: Design8
-                        },
-                        {
-                            src: Design9
                         }
                     ]
                 },
@@ -851,9 +839,12 @@ export default {
                 },
                 {
                     title: "Final Design",
-                    text: `Since I thought that the final design of the user timeline is overloaded, I’ve redesigned it for the portfolio.<br/>
-                    On the first screen I allowed the user to see the violation behaviour pattern of the users. And below, the summary of the users who have the most violations.<br/>
-                    After that, the researcher can investigate a specific user.`,
+                    text: `Since I thought that the final design of the user timeline was overloaded, I’ve redesigned it for the portfolio.<br/>
+                    On the first screen the user can see the violation behaviour pattern of other users,<br/>
+                    and then decide if he wants to continue and investigate further.<br/>
+                    Below the chart, there's a summary of the users who have the most violations.<br/><br/>
+                    After that, the user can choose a specific user and see what type of issue has appeared more.<br/>
+                    At the top of the user page there's a summary of the kind of violations he has caused`,
                     images: [
                         {
                             src: Timeline1
@@ -878,9 +869,11 @@ export default {
                 },
                 {
                     title: "Brainstorming & Competitor Analysis",
-                    text: `We watched how our competitors dealt with the same issue. It helped us to brainstorm and to find new ideas.<br/>
-                    We compared pros and cons for every solution.`,
-                    images: [],
+                    text: `I saw how our competitors solved the same issue, it helped me to brainstorm and to find new ideas.<br/>
+                    I compared pros and cons for every solution, and examined the ideas considering our requirements and needs.`,
+                    images: [ {
+                        src: Brainstorm
+                    }],
                     sub: true
                 },
                 {
@@ -985,7 +978,16 @@ export default {
                     sub: true
                 },
                 {
-                    title: "Competitors SWOT Analysis",
+                    title: "Competitors Analysis",
+                    text: `I reviewed our competitors user flows and compared them.<br/>
+                    I compared the features - since Creojam is an MVP we needed to compromise on some of the features.
+                    We wanted to allow the user to upload quality DIY guides and still provide important basic details.`,
+                    images: [{
+                        src: Competitors
+                    }]
+                },
+                {
+                    title: "SWOT",
                     text: `I've prepared a SWOT analysis of our top 3 competitors:<br/><br/>
                     •&nbsp; Instructables<br/>
                     •&nbsp; Hometalk<br/>
@@ -1061,11 +1063,10 @@ export default {
                     text: `We examined our competitors and made a list of everything we liked and disliked for each one.<br/>
                     That helped us decide on our major guidelines - which will give us an advantage over our competitors.<br/>
                     
-                    •&nbsp; Every guide will include a list of the specific materials and tools the maker used,In order to provide the exact process of how the DIY creation was done<br/>
+                    •&nbsp; Every guide will include a list of the specific materials and tools the maker used,<br/>
+                     &nbsp;&nbsp;&nbsp;&nbsp;in order to provide the exact process of how the DIY creation was done<br/>
                     •&nbsp; All the guides will have the same look, for consistent experience<br/>
                     •&nbsp; Only appropriate content will be allowed - all the guides need to be approved by us before they are published<br/>
-                    •&nbsp; Authors of DIY guides will get incentivized to provide quality guides<br/>
-                    •&nbsp; We will keep a clear, clean and fun UI<br/>
                     •&nbsp; Every guide will supply basic details of information like the difficulty level and the time it takes`,
                     images: [
                     ],
@@ -1082,18 +1083,9 @@ export default {
                     sub: true
                 },
                 {
-                    title: "The Implementation",
-                    text: `First, we created a clear roadmap, with deadlines and goals.<br/>
-                    We created an MVP that does not look like one or works like one - it is an MVP that works and feels like a final product.<br/>
-                    We priorotized the features according to our time and resources. Then we defined them based on our research and translated them into wireframes.<br/>
-                    We found a lot of creative solutions based on our skills and intiative and not money.`,
-                    images: [
-                    ],
-                    sub: true
-                },
-                {
                     title: "Product Design",
                     text: ``,
+                    galleryBorder: true,
                     images: [
                         {
                             src: CreoDesign1
@@ -1118,6 +1110,12 @@ export default {
                         },
                         {
                             src: CreoDesign8
+                        },
+                        {
+                            src: CreoDesign9
+                        },
+                        {
+                            src: CreoDesign10
                         }
                     ],
                     sub: true

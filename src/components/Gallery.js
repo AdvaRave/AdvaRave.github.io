@@ -8,6 +8,7 @@ const StyledGallery = styled.div``;
 const SelectedImageContainer = styled.div`
     position: relative;
     box-sizing: border-box;
+    text-align: center;
 
     ${props => props.multiple && `
         margin-bottom: 20px;
@@ -54,6 +55,10 @@ const SelectedImage = styled.img`
     max-height: 100%;
     border-radius: 5px;
     cursor: pointer;
+
+    ${props => props.border && `
+        border: 2px solid ${props.theme.colors.borderGrey}; 
+    `}
     
     ${props => props.height && `
         height: ${props.height}px;
@@ -139,7 +144,7 @@ const ImageThumbnail = styled.li`
     }
 `;
 
-const Gallery = ({images}) => {
+const Gallery = ({images, border}) => {
     const [selectedImageIndex, setSelectedImageIndex] = useState(0);
     const [fullScreen, setFullScreen] = useState(false);
    
@@ -169,7 +174,7 @@ const Gallery = ({images}) => {
     return (
         <StyledGallery>
             <SelectedImageContainer multiple={images.length > 1} fullScreen={fullScreen}>
-                <SelectedImage src={images[selectedImageIndex].src} height={images[selectedImageIndex].height} onClick={() => setFullScreen(true)} />
+                <SelectedImage src={images[selectedImageIndex].src} height={images[selectedImageIndex].height} border={border} onClick={() => setFullScreen(true)} />
                 {fullScreen && <ExitFullScreen onClick={() => setFullScreen(false)}><FontAwesomeIcon icon={faTimes} /></ExitFullScreen>}
                 {selectedImageIndex - 1 >= 0 && <PrevImage onClick={() => setSelectedImageIndex(selectedImageIndex-1)}><FontAwesomeIcon icon={faChevronLeft} /></PrevImage>}
                 {selectedImageIndex + 1 < images.length && <NextImage onClick={() => setSelectedImageIndex(selectedImageIndex+1)}><FontAwesomeIcon icon={faChevronRight} /></NextImage>}
