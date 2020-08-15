@@ -34,6 +34,14 @@
     </style>
     <title>Adva Rave - Portfolio</title>
 
+    <script>
+       let path = window.sessionStorage.path;
+       if (path) {
+          window.history.pushState(null, null, path);
+          window.sessionStorage.removeItem('path');
+       }
+    </script>
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135453333-1"></script>
     <script>
