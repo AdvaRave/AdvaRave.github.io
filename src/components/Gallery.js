@@ -36,12 +36,18 @@ const SelectedImageContainer = styled.div`
 
         @media only screen and (max-width: 1024px) {
            padding: 120px 0;
+
+           img {
+               height: calc(100vh - 240px) !important;
+           }
         }
     `}
 
     @media only screen and (max-width: 1024px) {
         img {
             object-position: center center;
+            object-fit: contain;
+            height: auto;
         }
 
         p {
@@ -66,6 +72,12 @@ const SelectedImage = styled.img`
         object-fit: contain;
         object-position: top center;
     `}
+
+    @media only screen and (max-width: 1024px) {
+        ${props => props.height && `
+            height: ${props.height / 3}px;
+        `}
+    }
 `;
 
 const ImageDescription = styled.p`
@@ -154,11 +166,9 @@ const Gallery = ({images, border}) => {
             
             if (event.keyCode === 27) {
                 setFullScreen(false);
-            }
-            else if (event.keyCode === 37 && selectedImageIndex - 1 >= 0) {
+            } else if (event.keyCode === 37 && selectedImageIndex - 1 >= 0) {
                 setSelectedImageIndex(selectedImageIndex-1);
-            }
-            else if (event.keyCode === 39 && selectedImageIndex + 1 < images.length) {
+            } else if (event.keyCode === 39 && selectedImageIndex + 1 < images.length) {
                 setSelectedImageIndex(selectedImageIndex+1);
             }
         };

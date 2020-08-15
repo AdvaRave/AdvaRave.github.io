@@ -49,6 +49,7 @@ const NavButton = styled.a`
 
   &:first-child {
     color: ${props => props.theme.colors.prefixBlue};
+    font-size: 18px;
   }
 `;
 

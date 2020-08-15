@@ -694,17 +694,9 @@ export default {
                 {
                     type: "standard",
                     title: "Design",
-                    text: `Security engineers get a lot of alerts from different systems, therefore they are most likely to get notified on the alert via Slack rather than actively check the system.<br/>
-                           It is very important for them to see the alerts within a context to the other alerts.<br/>
-                           Did the alert happen in the same time with other alerts? Do the same type of alerts happen over and over again?<br/>
-                           Also, in order to prevent an overloaded screen, we aggregated the alerts by category and mentioned the type of the critical alerts in each category (which is very important to the user).<br/><br/>
-                           The user will often take care of the critical alerts, and neglect the alerts with the lower severity.<br/>
-                           However, we did want to present the user the full status, in order for him to decide what's important and whether there's a pattern in a certain category or an issue with a certain resource.<br/>
-                           Inside each category the alerts are sorted by time because the user needs to see new relevant data.<br/>
-                           All the actions are sorted at the end of the table, including the ability to see all the findings, see more details on each alert, and open a Jira task.<br/><br/>
-                           It was very important that the user could navigate easily between the alerts and the findings.<br/>
+                    text: `It was very important to allow the user to navigate easily between the alerts and the findings.<br/>
                            But after the wireframing we still had some deliberations regarding option 1 and option 3.<br/> 
-                           I prepared an initial design for both of the screens. To see how the data could look.<br/>
+                           I prepared an initial design for both of the screens, to see how the data could look.<br/>
                            After that it was clear that option 3 was the best solution, while option 1 blocked all the screen with a view of 1 alert.`,
                     images: [
                         {
@@ -720,16 +712,22 @@ export default {
                 {
                     type: "standard",
                     title: "Final Design",
-                    text: `The final design also contained a dashboard and a table, here I wanted to focus on the table design.`,
+                    text: `Security engineers get a lot of alerts from different systems, therefore they are most likely to get notified on the alert via Slack rather than actively check the system.<br/>
+                    It is very important for them to see the alerts within a context to the other alerts.<br/>
+                    Did the alert happen in the same time with other alerts? Do the same type of alerts happen over and over again?<br/>
+                    Also, in order to prevent an overloaded screen, we aggregated the alerts by category and mentioned the type of the critical alerts in each category (which is very important to the user).<br/><br/>
+                    The user will often take care of the critical alerts, and neglect the alerts with the lower severity.<br/>
+                    However, we did want to present the user the full status, in order for him to decide what's important and whether there's a pattern in a certain category or an issue with a certain resource.<br/>
+                    Inside each category the alerts are sorted by time because the user needs to see new relevant data.<br/>
+                    All the actions are sorted at the end of the table, including the ability to see all the findings, see more details on each alert, and open a Jira task.<br/><br/>
+                    It was very important that the user could navigate easily between the alerts and the findings.<br/>
+                    The final design contained a dashboard and a table, here I wanted to focus on the table design.`,
                     images: [
                         {
                             src: Design1
                         },
                         {
                             src: Design2
-                        },
-                        {
-                            src: Design3
                         },
                         {
                             src: Design3
@@ -863,8 +861,21 @@ export default {
                 },
                 {
                     title: "Rules Configuration",
-                    text: `The user can configure his own rules, that means he can define conditions that are based on them he will get an alert.<br/>
-                    The conditions have three parameters: field, match and value and the user can define the different relations between them - and / or.`,
+                    text: `
+                    The user can determine which alerts he wants to receive based on rules creation.<br/>
+                    The rules allow him to examine users behaviour, and detect activities regarding sensitive information in the cluster log.<br/>
+                    The user can define conditions that are based on them recieve an alert.<br/><br/>
+                    The rule is composed from 3 main criterias: <br/>
+                    <b>Field</b> - contain different criterias of kubernetes<br/>
+                    <b>Match Operator</b> - defines the relationship between the field and value<br/>
+                    <b>Value</b> - defines what the user want to check<br/>
+                    The user can define the different relations between them - and / or.<br/><br/>
+                    For example: <br/>
+                    <b>Field</b> - Resource Name<br/>
+                    <b>Match Operator</b> - Equal<br/>
+                    <b>Value</b> - PCI<br/>
+                    That means that the user will get all the information containing PCI (Payment card industry data security standard).<br/>
+                    Sensitive data that is supposed to be private and hidden.`,
                     images: []
                 },
                 {
