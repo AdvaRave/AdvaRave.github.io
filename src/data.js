@@ -87,6 +87,7 @@ import Timeline1 from './images/kaudit/timeline/1.png';
 import Timeline2 from './images/kaudit/timeline/2.png';
 import Timeline3 from './images/kaudit/timeline/3.png';
 import Timeline4 from './images/kaudit/timeline/4.png';
+import Timeline5 from './images/kaudit/timeline/5.png';
 
 // Creojam
 import Creojam from './images/creojam/creojam.png';
@@ -806,60 +807,6 @@ export default {
                     ]
                 },
                 {
-                    title: "The User Timeline",
-                    text: `The user timeline screen helps the security resercher to identify violations patterns in the user behaviour.<br/>
-                    First, the security researcher identifies the users that have the largest number of incidents and violations and then he can search for more information on a specific user.`,
-                    images: []
-                },
-                {
-                    title: "Wireframes & Flow",
-                    text: ``,
-                    images: [
-                        {
-                            src: TimelineWF1,
-                            height: 600,
-                            description: `The user timeline was a very challenging screen, since it contains a lot of information.<br/>
-                            We considered showing different types of information:<br/><br/>
-                            The user timeline with a detailed table with information about all of the users`
-                        },
-                        {
-                            src: TimelineWF2,
-                            height: 600
-                        },
-                        {
-                            src: TimelineWF3,
-                            height: 600,
-                            description: `Or a table with with the summary of all the users violation types with the user 
-                            timeline.<br/> Below that, there’s the user’s violation details in a table.`
-                        }
-                    ],
-                    sub: true
-                },
-                {
-                    title: "Final Design",
-                    text: `Since I thought that the final design of the user timeline was overloaded, I’ve redesigned it for the portfolio.<br/>
-                    On the first screen the user can see the violation behaviour pattern of other users,<br/>
-                    and then decide if he wants to continue and investigate further.<br/>
-                    Below the chart, there's a summary of the users who have the most violations.<br/><br/>
-                    After that, the user can choose a specific user and see what type of issue has appeared more.<br/>
-                    At the top of the user page there's a summary of the kind of violations he has caused`,
-                    images: [
-                        {
-                            src: Timeline1
-                        },
-                        {
-                            src: Timeline2
-                        },
-                        {
-                            src: Timeline3
-                        },
-                        {
-                            src: Timeline4
-                        }
-                    ],
-                    sub: true
-                },
-                {
                     title: "Rules Configuration",
                     text: `
                     The user can determine which alerts he wants to receive based on rules creation.<br/>
@@ -943,6 +890,63 @@ export default {
                     }],
                     sub: true
                 },
+                {
+                    title: "The User Timeline",
+                    text: `The user timeline screen helps the security resercher to identify violations patterns in the user behaviour.<br/>
+                    First, the security researcher identifies the users that have the largest number of incidents and violations and then he can search for more information on a specific user.`,
+                    images: []
+                },
+                {
+                    title: "Wireframes & Flow",
+                    text: ``,
+                    images: [
+                        {
+                            src: TimelineWF1,
+                            height: 600,
+                            description: `The user timeline was a very challenging screen, since it contains a lot of information.<br/>
+                            We considered showing different types of information:<br/><br/>
+                            The user timeline with a detailed table with information about all of the users`
+                        },
+                        {
+                            src: TimelineWF2,
+                            height: 600
+                        },
+                        {
+                            src: TimelineWF3,
+                            height: 600,
+                            description: `Or a table with with the summary of all the users violation types with the user 
+                            timeline.<br/> Below that, there’s the user’s violation details in a table.`
+                        }
+                    ],
+                    sub: true
+                },
+                {
+                    title: "Final Design",
+                    text: `Since I thought that the final design of the user timeline was overloaded, I’ve redesigned it for the portfolio.<br/>
+                    On the first screen the user can see the violation behaviour pattern of other users,<br/>
+                    and then decide if he wants to continue and investigate further.<br/>
+                    Below the chart, there's a summary of the users who have the most violations.<br/><br/>
+                    After that, the user can choose a specific user and see what type of issue has appeared more.<br/>
+                    At the top of the user page there's a summary of the kind of violations he has caused`,
+                    images: [
+                        {
+                            src: Timeline1
+                        },
+                        {
+                            src: Timeline2
+                        },
+                        {
+                            src: Timeline3
+                        },
+                        {
+                            src: Timeline4
+                        },
+                        {
+                            src: Timeline5
+                        }
+                    ],
+                    sub: true
+                }
             ]
         },
         {
