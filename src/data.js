@@ -502,13 +502,10 @@ export default {
                 {
                     type: "standard",
                     title: "Overview",
-                    text: `Alcide Runtime <b>helps the user to enforce policy recommendations and visualize the Kubernetes infrastructure</b><br/>. 
+                    text: `Alcide Runtime <b>helps the user to enforce policy recommendations and visualize the Kubernetes infrastructure</b>.<br/>
                     Alcide’s embedded policies are application-aware policies that allow developers and/or DevOps to define network policies during build time.<br/><br/>
                     Alcide platform allows the users to gather, monitor, and manage all of their external security policies.`,
                     images: [
-                        {
-                            src: DevopsWorkflow
-                        } 
                     ]
                 },
                 {
